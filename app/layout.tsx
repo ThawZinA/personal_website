@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Roboto } from "next/font/google"
 import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
 import { Analytics } from "@vercel/analytics/react"
 import { Suspense } from "react"
 
@@ -12,23 +13,22 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: "Thaw Zin Aung - Web Designer & Developer",
-  description:
-    "Portfolio of Thaw Zin Aung - Web Designer and Frontend Developer specializing in beautiful, responsive websites and user experiences.",
-  keywords: ["web designer", "frontend developer", "portfolio", "Thaw Zin Aung", "web development", "UI/UX"],
-  authors: [{ name: "Thaw Zin Aung" }],
-  creator: "Thaw Zin Aung",
+  title: "Grace Thaw | Full Stack Developer & Designer",
+  description: "Portfolio of Grace Thaw - Full Stack Developer, UI/UX Designer, and Creative Problem Solver",
+  keywords: ["Grace Thaw", "Full Stack Developer", "UI/UX Designer", "Web Developer", "Portfolio"],
+  authors: [{ name: "Grace Thaw" }],
+  creator: "Grace Thaw",
   openGraph: {
-    title: "Thaw Zin Aung - Web Designer & Developer",
-    description: "Portfolio of Thaw Zin Aung - Web Designer and Frontend Developer",
-    url: "https://your-domain.com",
-    siteName: "Thaw Zin Aung Portfolio",
+    title: "Grace Thaw | Full Stack Developer & Designer",
+    description: "Portfolio of Grace Thaw - Full Stack Developer, UI/UX Designer, and Creative Problem Solver",
+    url: "https://gracethaw.com",
+    siteName: "Grace Thaw Portfolio",
     images: [
       {
-        url: "/images/logo.png",
+        url: "/images/grace-website-preview.png",
         width: 1200,
         height: 630,
-        alt: "Thaw Zin Aung Portfolio",
+        alt: "Grace Thaw Portfolio Preview",
       },
     ],
     locale: "en_US",
@@ -36,22 +36,25 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Thaw Zin Aung - Web Designer & Developer",
-    description: "Portfolio of Thaw Zin Aung - Web Designer and Frontend Developer",
-    images: ["/images/logo.png"],
+    title: "Grace Thaw | Full Stack Developer & Designer",
+    description: "Portfolio of Grace Thaw - Full Stack Developer, UI/UX Designer, and Creative Problem Solver",
+    images: ["/images/grace-website-preview.png"],
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-    other: [{ rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#7391c8" }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
-  manifest: "/site.webmanifest",
-  themeColor: "#7391c8",
-  generator: "v0.dev",
+  verification: {
+    google: "your-google-verification-code",
+  },
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -60,12 +63,22 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#ffffff" />
+      </head>
       <body className={roboto.className}>
-        <Suspense fallback={<div>Loading...</div>}>
-          {children}
-          <Analytics />
+        <Suspense fallback={null}>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            {children}
+          </ThemeProvider>
         </Suspense>
+        <Analytics />
       </body>
     </html>
   )

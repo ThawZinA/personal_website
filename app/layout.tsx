@@ -1,11 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Roboto_Mono } from "next/font/google"
+import { Roboto } from "next/font/google"
 import "./globals.css"
 import { Analytics } from "@vercel/analytics/react"
 import { Suspense } from "react"
 
-const robotoMono = Roboto_Mono({ subsets: ["latin"] })
+const roboto = Roboto({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Thaw Zin Aung - Web Designer & Developer",
@@ -50,7 +50,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={robotoMono.className}>
+      <body className={roboto.className}>
         <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
         <Analytics />
       </body>

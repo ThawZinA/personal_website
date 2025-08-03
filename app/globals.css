@@ -1,0 +1,282 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+
+  * {
+    @apply border-border;
+    cursor: url("/cursors/paw-new.png") 16 16, auto;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    cursor: url("/cursors/paw-new.png") 16 16, auto;
+  }
+
+  /* Custom cursor for interactive elements */
+  button,
+  a,
+  [role="button"],
+  [role="link"],
+  .cursor-pointer,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"] {
+    cursor: url("/cursors/paw-new.png") 16 16, pointer;
+  }
+
+  /* Hover state for interactive elements - same new paw */
+  button:hover,
+  a:hover,
+  [role="button"]:hover,
+  [role="link"]:hover,
+  .cursor-pointer:hover,
+  input[type="button"]:hover,
+  input[type="submit"]:hover,
+  input[type="reset"]:hover {
+    cursor: url("/cursors/paw-new.png") 18 18, pointer;
+    transform: scale(1.02);
+  }
+
+  /* Text selection cursor */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea,
+  [contenteditable] {
+    cursor: url("/cursors/paw-new.png") 16 16, text;
+  }
+
+  p {
+     font-family: "Roboto Mono", monospace;
+  }
+}
+
+/* Hide scrollbar for timeline */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile timeline scroll snapping */
+.timeline-scroll-mobile {
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.timeline-scroll-mobile .timeline-card {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+/* Desktop timeline smooth scrolling */
+.timeline-scroll-desktop {
+  scroll-behavior: smooth;
+}
+
+/* Pixel art button styles */
+.pixel-button {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Enhanced pixel art styling */
+.pixel-art {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  font-family: "Courier New", monospace;
+}
+
+/* Smooth transitions for mobile card scaling */
+@media (max-width: 768px) {
+  .timeline-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+}
+
+/* Custom pixel art loading animations */
+@keyframes pixelSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+    box-shadow: 3px 3px 0px rgba(115, 145, 200, 0.4);
+  }
+  50% {
+    transform: rotate(180deg);
+    box-shadow: 2px 2px 0px rgba(115, 145, 200, 0.3);
+  }
+  75% {
+    transform: rotate(270deg);
+    box-shadow: 4px 4px 0px rgba(115, 145, 200, 0.5);
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 2px 2px 0px rgba(115, 145, 200, 0.3);
+  }
+}
+
+@keyframes pixelPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+}
+
+/* Pixel spinner specific styling */
+.pixel-spinner {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Loading state transitions */
+.loading-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Pixel art loading dots animation */
+@keyframes pixelDots {
+  0%,
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.pixel-dots span:nth-child(1) {
+  animation: pixelDots 1.4s infinite ease-in-out;
+  animation-delay: 0s;
+}
+
+.pixel-dots span:nth-child(2) {
+  animation: pixelDots 1.4s infinite ease-in-out;
+  animation-delay: 0.2s;
+}
+
+.pixel-dots span:nth-child(3) {
+  animation: pixelDots 1.4s infinite ease-in-out;
+  animation-delay: 0.4s;
+}
+
+/* Floating cloud animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-3px);
+  }
+  75% {
+    transform: translateY(-15px) translateX(2px);
+  }
+}
+
+/* Twinkling star animation */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Pixel art cloud styling */
+.pixel-clouds {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}

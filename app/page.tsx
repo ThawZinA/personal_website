@@ -257,8 +257,8 @@ export default function Portfolio() {
             <LazyImage src="/images/logo.png" alt="Thaw Zin Aung" className="w-full h-full object-cover" />
           </motion.div>
           <div>
-            <h1 className="font-semibold text-black dark:text-white font-mono">THAW ZIN AUNG</h1>
-            <p className="text-sm text-gray-600 dark:text-gray-400 font-mono">Web Designer & Developer</p>
+            <h1 className="font-semibold text-black dark:text-white">THAW ZIN AUNG</h1>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Web Designer & Developer</p>
           </div>
         </motion.div>
 
@@ -279,7 +279,7 @@ export default function Portfolio() {
             >
               <Link
                 href={`#${item.toLowerCase()}`}
-                className="text-black dark:text-white hover:text-[#7391c8] dark:hover:text-[#7391c8] transition-all duration-300 hover:[text-shadow:0_0_8px_rgba(115,145,200,0.6)] px-2 py-1 rounded hover:-translate-y-0.5 font-mono focus:outline-none focus:ring-4 focus:ring-blue-300"
+                className="text-black dark:text-white hover:text-[#7391c8] dark:hover:text-[#7391c8] transition-all duration-300 hover:[text-shadow:0_0_8px_rgba(115,145,200,0.6)] px-2 py-1 rounded hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-blue-300"
                 aria-label={`Navigate to ${item.toLowerCase()} section`}
                 onMouseEnter={playHover}
                 onClick={playClick}

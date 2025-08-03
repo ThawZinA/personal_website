@@ -61,6 +61,7 @@
   * {
     @apply border-border;
     cursor: url("/cursors/paw-new.png") 16 16, auto;
+    font-family: "Roboto", Arial, sans-serif;
   }
 
   body {
@@ -102,9 +103,6 @@
     cursor: url("/cursors/paw-new.png") 16 16, text;
   }
 
-  p {
-     font-family: "Roboto Mono", monospace;
-  }
 }
 
 /* Hide scrollbar for timeline */

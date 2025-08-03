@@ -1,53 +1,46 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Roboto_Mono } from "next/font/google"
 import "./globals.css"
 import { Analytics } from "@vercel/analytics/react"
 import { Suspense } from "react"
 
-const inter = Inter({ subsets: ["latin"] })
+const robotoMono = Roboto_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Thaw Zin Aung - Web Designer & Developer",
   description:
-    "Portfolio of Thaw Zin Aung - Web Designer and Frontend Developer specializing in beautiful, responsive websites and user experiences.",
-  keywords: ["web designer", "frontend developer", "portfolio", "Thaw Zin Aung", "web development", "UI/UX"],
+    "Personal portfolio of Thaw Zin Aung, a web designer and frontend developer specializing in modern web technologies and user experience design.",
+  keywords: "web developer, web designer, frontend developer, React, Next.js, TypeScript, portfolio",
   authors: [{ name: "Thaw Zin Aung" }],
   creator: "Thaw Zin Aung",
   openGraph: {
-    title: "Thaw Zin Aung - Web Designer & Developer",
-    description: "Portfolio of Thaw Zin Aung - Web Designer and Frontend Developer",
-    url: "https://your-domain.com",
-    siteName: "Thaw Zin Aung Portfolio",
-    images: [
-      {
-        url: "/images/logo.png",
-        width: 1200,
-        height: 630,
-        alt: "Thaw Zin Aung Portfolio",
-      },
-    ],
-    locale: "en_US",
     type: "website",
+    locale: "en_US",
+    url: "https://thawzinaung.dev",
+    title: "Thaw Zin Aung - Web Designer & Developer",
+    description:
+      "Personal portfolio of Thaw Zin Aung, a web designer and frontend developer specializing in modern web technologies and user experience design.",
+    siteName: "Thaw Zin Aung Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Thaw Zin Aung - Web Designer & Developer",
-    description: "Portfolio of Thaw Zin Aung - Web Designer and Frontend Developer",
-    images: ["/images/logo.png"],
+    description:
+      "Personal portfolio of Thaw Zin Aung, a web designer and frontend developer specializing in modern web technologies and user experience design.",
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-    other: [{ rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#7391c8" }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
-  manifest: "/site.webmanifest",
-  themeColor: "#7391c8",
-  generator: "v0.dev",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -56,12 +49,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Suspense fallback={<div>Loading...</div>}>
-          {children}
-          <Analytics />
-        </Suspense>
+    <html lang="en" suppressHydrationWarning>
+      <body className={robotoMono.className}>
+        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+        <Analytics />
       </body>
     </html>
   )

@@ -13,22 +13,22 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: "Grace Thaw | Full Stack Developer & Designer",
-  description: "Portfolio of Grace Thaw - Full Stack Developer, UI/UX Designer, and Creative Problem Solver",
+  title: " Thaw | Frontend Developer & Designer",
+  description: "Portfolio of Thaw Zin Aung - Full Stack Developer, UI/UX Designer, and Creative Problem Solver",
   keywords: ["Grace Thaw", "Full Stack Developer", "UI/UX Designer", "Web Developer", "Portfolio"],
   authors: [{ name: "Grace Thaw" }],
   creator: "Grace Thaw",
   openGraph: {
-    title: "Grace Thaw | Full Stack Developer & Designer",
-    description: "Portfolio of Grace Thaw - Full Stack Developer, UI/UX Designer, and Creative Problem Solver",
-    url: "https://gracethaw.com",
-    siteName: "Grace Thaw Portfolio",
+    title: "Thaw | Full Stack Developer & Designer",
+    description: "Portfolio of Thaw Zin Aung - Full Stack Developer, UI/UX Designer, and Creative Problem Solver",
+    url: "https://thawzinag.dev",
+    siteName: "Thaw Zin Portfolio",
     images: [
       {
         url: "/images/grace-website-preview.png",
         width: 1200,
         height: 630,
-        alt: "Grace Thaw Portfolio Preview",
+        alt: "Thaw Portfolio Preview",
       },
     ],
     locale: "en_US",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grace Thaw | Full Stack Developer & Designer",
+    title: "Thaw | Full Stack Developer & Designer",
     description: "Portfolio of Grace Thaw - Full Stack Developer, UI/UX Designer, and Creative Problem Solver",
     images: ["/images/grace-website-preview.png"],
   },

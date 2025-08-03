@@ -3,6 +3,8 @@
 import type React from "react"
 import { Suspense } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import FocusLock from 'react-focus-lock';
+import { RemoveScroll } from 'react-remove-scroll';
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -279,7 +281,7 @@ export default function Portfolio() {
             >
               <Link
                 href={`#${item.toLowerCase()}`}
-                className="text-black dark:text-white hover:text-[#7391c8] dark:hover:text-[#7391c8] transition-all duration-300 hover:[text-shadow:0_0_8px_rgba(115,145,200,0.6)] px-2 py-1 rounded hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                className="text-black dark:text-white hover:text-[#7391c8] dark:hover:text-[#7391c8] transition-all duration-300 hover:[text-shadow:0_0_8px_rgba(115,145,200,0.6)] px-2 py-1 rounded hover:-translate-y-0.5"
                 aria-label={`Navigate to ${item.toLowerCase()} section`}
                 onMouseEnter={playHover}
                 onClick={playClick}
@@ -318,7 +320,7 @@ export default function Portfolio() {
                 }, 100)
               }
             }}
-            className="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300 hover:shadow-lg hover:shadow-gray-300/30 dark:hover:shadow-gray-600/30 focus:outline-none focus:ring-4 focus:ring-blue-300"
+            className="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300 hover:shadow-lg hover:shadow-gray-300/30 dark:hover:shadow-gray-600/30"
             aria-label={isSoundEnabled ? "Disable sound effects" : "Enable sound effects"}
             aria-pressed={isSoundEnabled}
             initial={{ opacity: 0, x: 50 }}
@@ -359,7 +361,7 @@ export default function Portfolio() {
               toggleTheme()
               playClick()
             }}
-            className="w-8 h-8 bg-[#7391c8] dark:bg-[#5f7ab8] rounded flex items-center justify-center hover:bg-[#5f7ab8] dark:hover:bg-[#4a6ba3] transition-all duration-300 hover:shadow-lg hover:shadow-[#7391c8]/30 dark:hover:shadow-[#5f7ab8]/30 focus:outline-none focus:ring-4 focus:ring-blue-300"
+            className="w-8 h-8 bg-[#7391c8] dark:bg-[#5f7ab8] rounded flex items-center justify-center hover:bg-[#5f7ab8] dark:hover:bg-[#4a6ba3] transition-all duration-300 hover:shadow-lg hover:shadow-[#7391c8]/30 dark:hover:shadow-[#5f7ab8]/30"
             aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
             aria-pressed={isDarkMode}
             initial={{ opacity: 0, x: 50 }}
@@ -437,7 +439,9 @@ export default function Portfolio() {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
+          <FocusLock>
+            <RemoveScroll>
+              <motion.div
             className="md:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -446,7 +450,7 @@ export default function Portfolio() {
             onClick={toggleMobileMenu}
           >
             <motion.nav
-              className={`absolute top-[73px] right-0 w-[80vw] h-full bg-white dark:bg-gray-900 border-l border-b border-gray-200 dark:border-gray-700 shadow-xl ${
+              className={`absolute top-[73px] right-0 w-[80vw] h-[80vh] bg-white dark:bg-gray-900 border-l border-b border-gray-200 dark:border-gray-700 shadow-xl ${
                 isScrolled ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md" : ""
               }`}
               role="navigation"
@@ -482,6 +486,8 @@ export default function Portfolio() {
               </div>
             </motion.nav>
           </motion.div>
+            </RemoveScroll>
+          </FocusLock>
         )}
       </AnimatePresence>
 
@@ -1321,7 +1327,7 @@ export default function Portfolio() {
                 >
                   <Link
                     href={href}
-                    className="text-gray-600 dark:text-gray-400 hover:text-[#7391c8] dark:hover:text-[#7391c8] transition-all duration-300 hover:[text-shadow:0_0_12px_rgba(115,145,200,0.8)] p-2 rounded-full focus:outline-none focus:ring-4 focus:ring-blue-300"
+                    className="text-gray-600 dark:text-gray-400 hover:text-[#7391c8] dark:hover:text-[#7391c8] transition-all duration-300 hover:[text-shadow:0_0_12px_rgba(115,145,200,0.8)] p-2 rounded-full "
                     aria-label={`Visit ${label} profile (opens in new tab)`}
                     role="listitem"
                     onMouseEnter={playHover}

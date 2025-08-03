@@ -15,9 +15,9 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: " Thaw | Frontend Developer & Designer",
   description: "Portfolio of Thaw Zin Aung - Full Stack Developer, UI/UX Designer, and Creative Problem Solver",
-  keywords: ["Grace Thaw", "Full Stack Developer", "UI/UX Designer", "Web Developer", "Portfolio"],
-  authors: [{ name: "Grace Thaw" }],
-  creator: "Grace Thaw",
+  keywords: ["Thaw Zin Aung", "Full Stack Developer", "UI/UX Designer", "Web Developer", "Portfolio"],
+  authors: [{ name: "Thaw Zin Aung" }],
+  creator: "Thaw Zin Aung",
   openGraph: {
     title: "Thaw | Full Stack Developer & Designer",
     description: "Portfolio of Thaw Zin Aung - Full Stack Developer, UI/UX Designer, and Creative Problem Solver",

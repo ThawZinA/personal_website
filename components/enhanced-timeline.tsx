@@ -19,22 +19,22 @@ const timelineData: TimelineItem[] = [
     id: "current-learning",
     title: "CONTINUOUS LEARNING",
     period: "2024-Present",
-    description: "Exploring AI/ML integration, advanced React patterns, and cloud architecture.",
+    description: "Exploring AI integration, advanced React patterns, and web accessibility.",
     icon: "🚀",
     delay: 0,
   },
   {
     id: "frontend",
     title: "FRONTEND DEV",
-    period: "2021-2022",
-    description: "Built responsive web UIs using React.",
+    period: "2018-2022",
+    description: "Built responsive web UIs using JS & React.",
     icon: "👨‍💻",
     delay: 200,
   },
   {
     id: "designer",
     title: "UI DESIGNER",
-    period: "2020-2021",
+    period: "2019-2019",
     description: "Crafted layouts & branding for startups.",
     icon: "🎨",
     delay: 400,
@@ -42,27 +42,19 @@ const timelineData: TimelineItem[] = [
   {
     id: "tutor",
     title: "TUTOR",
-    period: "2019-2020",
-    description: "Taught basic web development to students.",
+    period: "2012-2018",
+    description: "Taught to students for matriculation exam.",
     icon: "💻",
     delay: 600,
   },
   {
     id: "student",
     title: "STUDENT",
-    period: "2018-2019",
+    period: "2015-2019",
     description: "Learned programming fundamentals & design.",
-    icon: "📚",
-    delay: 800,
-  },
-  {
-    id: "explorer",
-    title: "EXPLORER",
-    period: "2017-2018",
-    description: "Discovered passion for web technologies.",
     icon: "🔍",
-    delay: 1000,
-  },
+    delay: 800,
+  }
 ]
 
 export function EnhancedTimeline() {
@@ -199,9 +191,9 @@ export function EnhancedTimeline() {
           >
             🐾
           </motion.span>
-          <h3 className="text-2xl font-bold text-black dark:text-white font-mono">My Work History</h3>
+          <h3 className="text-xl font-medium text-[#7391c8]">My Work History</h3>
           <motion.span
-            className="text-2xl"
+            className="text-xl"
             animate={{
               rotate: [0, -10, 10, 0],
               scale: [1, 1.1, 1],
@@ -328,7 +320,7 @@ export function EnhancedTimeline() {
                     whileHover={{
                       scale: 1.2,
                       rotate: [0, -10, 10, 0],
-                      transition: { duration: 0.5 },
+                      transition: { duration: 0.25 },
                     }}
                   >
                     {item.icon}
@@ -336,7 +328,7 @@ export function EnhancedTimeline() {
 
                   {/* Title */}
                   <motion.h4
-                    className="font-bold text-lg mb-1 text-black dark:text-white font-mono tracking-wider"
+                    className="font-bold text-sm mb-1 text-black dark:text-white tracking-wider"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
@@ -346,7 +338,7 @@ export function EnhancedTimeline() {
 
                   {/* Period */}
                   <motion.p
-                    className="text-sm text-gray-600 dark:text-gray-400 mb-3 font-mono"
+                    className="text-sm text-gray-600 dark:text-gray-400 mb-3"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.3 }}
@@ -356,7 +348,7 @@ export function EnhancedTimeline() {
 
                   {/* Description */}
                   <motion.p
-                    className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed font-mono"
+                    className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.4 }}
@@ -446,7 +438,7 @@ export function EnhancedTimeline() {
         viewport={{ once: true }}
         transition={{ delay: 1.2, duration: 0.5 }}
       >
-        <p className="text-sm text-gray-600 dark:text-gray-400 font-mono">← Swipe to explore timeline →</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400">← Swipe to explore timeline →</p>
       </motion.div>
     </div>
   )

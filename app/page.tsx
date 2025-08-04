@@ -140,12 +140,8 @@ export default function Portfolio() {
         return "I build robust and scalable web applications using modern technologies and best practices. From frontend frameworks to backend systems, I enjoy solving complex problems and turning ideas into functional, efficient code that makes a real difference. I'm constantly learning new technologies and staying updated with industry trends to deliver cutting-edge solutions."
       case "Teacher":
         return "After graduating the matriculation exam with flying colors, I spent part of my free time couching the junior high school student preparing for their exam. That experience taught me how to break complex theories into simpler terms and teach it to others."
-      case "Customer service":
-        return "I work variouse positions in customer service. Clothing store, jwewllery,supermarket, restaurant. It maybe a part time but I learned alot about dealing with customers."
       case "Cat lover":
-        return "When I'm not coding or designing, you'll find me spending time watching movies, drawing, reading for occasionally in gym😄. But mainly I'd rather spend my feline friends. Cats have taught me  the importance of finding the perfect spot to work from(or nap 😝).  ."
-      case "Lifelong learner":
-        return "Technology evolves rapidly, and I believe in staying ahead of the curve. I regularly take online courses, attend webinars, contribute to open-source projects, and experiment with new frameworks and tools. Currently exploring AI integration in web development, advanced React patterns, and cloud architecture. Learning isn't just about keeping up—it's about pushing boundaries and bringing fresh perspectives to every project."
+        return "When I'm not coding or designing, you'll find me spending time watching movies, drawing, reading for occasionally in gym😄. But mainly I'd rather spend my feline friends. Cats have taught me  the importance of finding the perfect spot to work from😝."
       default:
         return "I create beautiful and intuitive user interfaces that not only look great but also provide exceptional user experiences. My design philosophy focuses on clean aesthetics, user-centered design principles, and creating digital experiences that users love to interact with."
     }
@@ -159,12 +155,8 @@ export default function Portfolio() {
         return "/images/about_web_developer.png"
       case "Teacher":
         return "/images/about_teacher.png"
-      case "Customer service":
-        return "/images/about_service.png"
       case "Cat lover":
         return "/images/about_cat_lover.png"
-      case "Lifelong learner":
-        return "/images/about_web_developer.png"
       default:
         return "/images/about_service.png"
     }
@@ -233,7 +225,7 @@ export default function Portfolio() {
 
       {/* Sticky Header with Enhanced Glassmorphism and Framer Motion */}
       <motion.header
-        className={`sticky top-0 z-40 flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-gray-700 transition-all duration-300 ${
+        className={`sticky top-0 z-40 flex items-center justify-between px-6 md:px-16 py-4 border-b border-gray-200 dark:border-gray-700 transition-all duration-300 ${
           isScrolled ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg" : "bg-white dark:bg-gray-900"
         }`}
         role="banner"
@@ -248,7 +240,7 @@ export default function Portfolio() {
           transition={{ delay: 0.2, duration: 0.6 }}
         >
           <motion.div
-            className="w-10 h-10 rounded-full overflow-hidden hover:shadow-lg hover:shadow-gray-300 dark:hover:shadow-gray-700 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300"
+            className="hidden sm:block w-10 h-10 rounded-full overflow-hidden hover:shadow-lg hover:shadow-gray-300 dark:hover:shadow-gray-700 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300"
             tabIndex={0}
             role="img"
             aria-label="Thaw Zin Aung profile picture"
@@ -658,7 +650,7 @@ export default function Portfolio() {
         </div>
 
         {/* Main Content Container */}
-        <div className="relative z-10 py-8 mx-4 sm:mx-6 lg:mx-8">
+        <div className="relative z-10 py-6 mx-4 sm:mx-6 lg:mx-8">
           <motion.div
             className="max-w-[1100px] mx-auto bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
@@ -669,11 +661,11 @@ export default function Portfolio() {
               {/* Hero Section with Enhanced Animations */}
               <section
                 id="home"
-                className="px-4 sm:px-6 lg:px-8 py-16 min-h-screen flex items-center"
+                className="px-4 sm:px-6 lg:px-12 py-16 flex items-center"
                 aria-labelledby="hero-heading"
               >
                 <div className="w-full">
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-12 items-center">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 items-center">
                     {/* Photo with Enhanced Animation */}
                     <MotionWrapper variant="slideLeft" delay={0.2} className="flex justify-center">
                       <motion.div
@@ -705,27 +697,20 @@ export default function Portfolio() {
                     >
                       <h2
                         id="hero-heading"
-                        className="text-3xl md:text-4xl font-regular text-black dark:text-white text-center md:text-left"
+                        className="text-2xl md:text-3xl font-regular text-black dark:text-white text-center md:text-left"
                       >
-                        <motion.span
-                          className={`${robotoMono.className} block`}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.6, duration: 0.5 }}
-                        >
-                          I'm
-                        </motion.span>
                         <motion.span
                           className={`${amaticSC.className} text-5xl md:text-7xl font-medium block leading-tight`}
                           initial={{ scale: 0.8 }}
                           whileInView={{
                             opacity: 1,
                             scale: [1, 1.01, 1],
-                            rotate: [0, 0.2, -0.2, 0],
+                            scaleX: [1,1.02, 1],
+                            rotate: [0, 0.4, -0.2, 0],
                           }}
                           transition={{
-                            delay: 0.2,
-                            duration: 1,
+                            // delay: 0.5,
+                            duration: 3,
                             repeat: Number.POSITIVE_INFINITY,
                           }}
                         >
@@ -737,12 +722,12 @@ export default function Portfolio() {
                     </MotionWrapper>
 
                     {/* Content with Enhanced Animations */}
-                    <MotionWrapper variant="slideRight" delay={0.6} className="col-span-2 md:col-span-1">
+                    <MotionWrapper variant="slideRight" delay={0.6} className="col-span-2 md:col-span-2">
                       <MotionStagger staggerDelay={0.2}>
                         <MotionWrapper variant="fadeIn">
                           <div className="mb-6">
-                            <p>
-                              Hello! I'm Thaw, a <span className="text-[#7391c8]">designer</span> and{" "}
+                            <p className="max-w-[45ch] text-justify">
+                              Mingalabar! I'm Thaw, a <span className="text-[#7391c8]">designer</span> and{" "}
                               <span className="text-[#7391c8]">frontend developer</span> who enjoys being at the
                               intersection of business, design and code.
                             </p>
@@ -751,15 +736,8 @@ export default function Portfolio() {
 
                         <MotionWrapper variant="fadeIn">
                           <div className="space-y-4 text-gray-700 dark:text-gray-300 mb-6">
-                            <p className="mb-2 text-gray-800 dark:text-gray-200">
-                              I <span className="text-[#7391c8]">design</span> and{" "}
-                              <span className="text-[#7391c8]">build</span> web and mobile experiences and teach people
-                              about them.
-                            </p>
-                            <p>
-                              I work with businesses to design and build beautiful websites and apps with a focus on
-                              responsive design, layouts, modern CSS, and simple and intuitive user interfaces. Always
-                              learning, always growing.
+                            <p className="mb-2 max-w-[45ch] text-justify text-gray-800 dark:text-gray-200">
+                              I design and build clean, aesthetics and intuitive user interfaces for <span className="text-[#7391c8]">web</span> and <span className="text-[#7391c8]">mobile experience</span> with a focus on usability and accessibilty.
                             </p>
                           </div>
                         </MotionWrapper>
@@ -788,7 +766,9 @@ export default function Portfolio() {
                                 onClick={playClick}
                               >
                                 <Download className="w-4 h-4 mr-2" aria-hidden="true" />
-                                Download My CV
+                                <a
+                                  href="/thawzinag_cv.pdf" download="thawzinag_cv"
+                                >Download My CV</a>
                               </Button>
                             </motion.div>
                           </div>
@@ -802,7 +782,7 @@ export default function Portfolio() {
               {/* About Me Section with Enhanced Animations */}
               <section
                 id="about"
-                className="px-4 sm:px-6 lg:px-8 py-16 bg-gray-50 dark:bg-gray-800 min-h-screen flex items-center"
+                className="px-4 sm:px-6 lg:px-12 py-16 bg-gray-50 dark:bg-gray-800 min-h-screen flex items-center"
                 aria-labelledby="about-heading"
               >
                 <div className="w-full">
@@ -820,19 +800,19 @@ export default function Portfolio() {
                         className="w-8 h-8 object-contain"
                       />
                     </motion.div>
-                    <h3 id="about-heading" className="text-xl font-semibold text-[#7391c8] font-mono">
+                    <h3 id="about-heading" className="text-xl font-semibold text-[#7391c8]">
                       ABOUT ME
                     </h3>
                   </MotionWrapper>
 
-                  <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+                  <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
                     <MotionWrapper variant="slideLeft" delay={0.2}>
-                      <p className="text-sm md:text-base mb-6 text-gray-800 dark:text-gray-200 font-mono">
+                      <p className="text-sm md:text-base mb-6 text-gray-800 dark:text-gray-200">
                         I worked different roles. I'm a{" "}
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
                             <motion.button
-                              className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300 inline-flex items-center gap-1 font-medium hover:shadow-md hover:shadow-gray-300 dark:hover:shadow-gray-600 text-sm md:text-base font-mono focus:outline-none focus:ring-4 focus:ring-blue-300"
+                              className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300 inline-flex items-center gap-1 font-medium hover:shadow-md hover:shadow-gray-300 dark:hover:shadow-gray-600 text-sm md:text-base"
                               aria-label={`Current role: ${selectedCareer}. Click to change role selection`}
                               aria-haspopup="listbox"
                               aria-expanded="false"
@@ -855,7 +835,7 @@ export default function Portfolio() {
                             role="listbox"
                             aria-label="Role selection menu"
                           >
-                            {["Developer", "Web designer", "Teacher", "Cat lover", "Lifelong learner"].map((role) => (
+                            {["Developer", "Web designer", "Teacher", "Cat lover"].map((role) => (
                               <DropdownMenuItem
                                 key={role}
                                 onClick={() => handleCareerChange(role)}
@@ -895,7 +875,7 @@ export default function Portfolio() {
                         transition={{ duration: 0.5 }}
                         className="text-gray-700 dark:text-gray-300"
                       >
-                        <p className="transition-all duration-300">{getCareerContent(selectedCareer)}</p>
+                        <p className="max-w-[45ch] text-justify transition-all duration-300">{getCareerContent(selectedCareer)}</p>
                       </motion.div>
                     </MotionWrapper>
                   </div>
@@ -907,7 +887,7 @@ export default function Portfolio() {
 
                   {/* Learning Journey Section with Enhanced Animations */}
                   <div className="mt-16">
-                    <MotionWrapper variant="slideUp" className="flex items-center gap-3 mb-8">
+                    <MotionWrapper variant="slideUp" className="flex items-center justify-center gap-3 mb-8">
                       <motion.div
                         className="w-8 h-8 flex items-center justify-center"
                         aria-hidden="true"
@@ -917,7 +897,7 @@ export default function Portfolio() {
                       >
                         <span className="text-2xl">📚</span>
                       </motion.div>
-                      <h3 className="text-xl font-semibold text-[#7391c8] font-mono">What I've Been Up to Now</h3>
+                      <h3 className="text-xl font-medium text-[#7391c8]">My Recent Activities</h3>
                     </MotionWrapper>
 
                     <MotionStagger className="grid md:grid-cols-2 gap-8" staggerDelay={0.2}>
@@ -932,7 +912,7 @@ export default function Portfolio() {
                           }}
                           onMouseEnter={playHover}
                         >
-                          <h4 className="font-bold text-lg mb-3 text-black dark:text-white tracking-wider flex items-center gap-2">
+                          <h4 className="font-medium text-base mb-3 text-[#7391c8] tracking-wider flex items-center gap-2">
                             <motion.span
                               animate={{ rotate: [0, 10, -10, 0] }}
                               transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatDelay: 3 }}
@@ -944,9 +924,8 @@ export default function Portfolio() {
                           <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
                             {[
                               "AI/ML integration in web applications",
-                              "Advanced React patterns & performance optimization",
-                              "Cloud architecture with AWS/Vercel",
-                              "TypeScript advanced features",
+                              "Advanced React & TypeScript features",
+                              "Web accessibility & SEO optimisation",
                             ].map((item, index) => (
                               <motion.li
                                 key={index}
@@ -975,7 +954,7 @@ export default function Portfolio() {
                           }}
                           onMouseEnter={playHover}
                         >
-                          <h4 className="font-bold text-lg mb-3 text-black dark:text-white tracking-wider flex items-center gap-2">
+                          <h4 className="font-medium text-base  mb-3 text-[#7391c8] tracking-wider flex items-center gap-2">
                             <motion.span
                               animate={{ scale: [1, 1.2, 1] }}
                               transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, repeatDelay: 2 }}
@@ -988,8 +967,8 @@ export default function Portfolio() {
                             {[
                               "MSc Business Information Systems (Merit) - 2024",
                               "Completed AI in Retail research project",
-                              "Built multiple full-stack applications",
-                              "Contributing to open-source projects",
+                              "Meta Frontend Developer Professional Certificate",
+                              "Google UX Designer Certificate",
                             ].map((item, index) => (
                               <motion.li
                                 key={index}
@@ -1014,7 +993,7 @@ export default function Portfolio() {
               {/* Work Section with Enhanced Animations */}
               <section
                 id="works"
-                className="px-4 sm:px-6 lg:px-8 py-16 min-h-screen flex items-center"
+                className="px-4 sm:px-6 lg:px-12 py-16 min-h-screen flex items-center"
                 aria-labelledby="work-heading"
               >
                 <div className="w-full">
@@ -1033,8 +1012,8 @@ export default function Portfolio() {
                           className="w-8 h-8 object-contain"
                         />
                       </motion.div>
-                      <h3 id="work-heading" className="text-xl font-semibold text-black dark:text-white font-mono">
-                        WORK
+                      <h3 id="work-heading" className="text-xl text-[#7391c8] font-semibold">
+                        WORKS
                       </h3>
                     </div>
                     <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.98 }}>
@@ -1044,7 +1023,7 @@ export default function Portfolio() {
                           playClick()
                         }}
                         variant="outline"
-                        className="text-[#7391c8] border-[#7391c8] bg-transparent hover:bg-[#7391c8] hover:text-white dark:hover:bg-[#7391c8] dark:hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#7391c8]/30 font-mono focus:outline-none focus:ring-4 focus:ring-blue-300"
+                        className="text-[#7391c8] border-[#7391c8] bg-transparent hover:bg-[#7391c8] hover:text-white dark:hover:bg-[#7391c8] dark:hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#7391c8]/30"
                         aria-label="Open projects gallery modal"
                         onMouseEnter={playHover}
                       >
@@ -1054,7 +1033,7 @@ export default function Portfolio() {
                   </MotionWrapper>
 
                   <MotionWrapper variant="fadeIn" delay={0.2}>
-                    <p className="text-gray-700 dark:text-gray-300 mb-8 font-mono">
+                    <p className="text-gray-700 dark:text-gray-300 mb-8">
                       I do design and build web and mobile experiences with a focus on the user needs.
                     </p>
                   </MotionWrapper>
@@ -1160,7 +1139,7 @@ export default function Portfolio() {
               {/* Contact Section with Enhanced Animations */}
               <section
                 id="contact"
-                className="px-4 sm:px-6 lg:px-8 py-16 bg-gray-50 dark:bg-gray-800 min-h-screen flex items-center"
+                className="px-4 sm:px-6 lg:px-12 py-12 bg-gray-50 dark:bg-gray-800 min-h-[50vh] flex items-center"
                 aria-labelledby="contact-heading"
               >
                 <div className="w-full">
@@ -1178,8 +1157,8 @@ export default function Portfolio() {
                         className="w-8 h-8 object-contain"
                       />
                     </motion.div>
-                    <h3 id="contact-heading" className="text-xl font-semibold text-black dark:text-white font-mono">
-                      CONTACT THAW
+                    <h3 id="contact-heading" className="text-xl font-semibold text-[#7391c8]">
+                      CONTACT ME
                     </h3>
                   </MotionWrapper>
 
@@ -1209,16 +1188,16 @@ export default function Portfolio() {
                     <MotionWrapper variant="slideRight" delay={0.4}>
                       <MotionStagger className="space-y-4 text-gray-700 dark:text-gray-300" staggerDelay={0.1}>
                         <MotionWrapper variant="fadeIn">
-                          <p>This works well for quick questions about CSS or design in general.</p>
+                          <p>This works well for a quick chat in general.</p>
                         </MotionWrapper>
                         <MotionWrapper variant="fadeIn">
-                          <p>-LinkedIn</p>
+                          <a className="text-[#5f7ab8] underline decoration-1" href="https://www.linkedin.com/in/thaw-zin-ag419/">-LinkedIn</a>
                         </MotionWrapper>
                         <MotionWrapper variant="fadeIn">
-                          <p>-facebook</p>
+                          <a className="text-[#5f7ab8] underline decoration-1" href="https://www.facebook.com/thawzin.ag.419">-Facebook</a>
                         </MotionWrapper>
                         <MotionWrapper variant="fadeIn">
-                          <p>
+                          <p className="max-w-[45ch] text-justify">
                             If you need to discuss your project or anything else, please feel free to email{" "}
                             <motion.a
                               href="mailto:thawzinaung199@gmail.com"
@@ -1231,12 +1210,11 @@ export default function Portfolio() {
                             >
                               thawzinaung199@gmail.com
                             </motion.a>{" "}
-                            and I will get back to you within 2 business days. Yes, please feel free to get in touch on
-                            the above email.
+                            and I will get back to you within a week.
                           </p>
                         </MotionWrapper>
                         <MotionWrapper variant="fadeIn">
-                          <p>
+                          <p className="max-w-[45ch] text-justify">
                             You want to say hello and say something in mind to share? I love messages like that. I can't
                             wait to hear from you!
                           </p>
@@ -1253,7 +1231,7 @@ export default function Portfolio() {
 
       {/* Footer with Enhanced Animations */}
       <motion.footer
-        className="px-6 py-8 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 transition-colors duration-300 min-h-[60vh] flex items-center"
+        className="px-6 py-6 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 transition-colors duration-300 flex items-center"
         role="contentinfo"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -1291,7 +1269,7 @@ export default function Portfolio() {
                 <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
                   <Link
                     href={`#${item.toLowerCase()}`}
-                    className="text-gray-600 dark:text-gray-400 hover:text-[#7391c8] dark:hover:text-[#7391c8] transition-all duration-300 hover:[text-shadow:0_0_8px_rgba(115,145,200,0.6)] px-2 py-1 rounded text-sm md:text-base font-mono focus:outline-none focus:ring-4 focus:ring-blue-300"
+                    className="text-[#7391c8] transition-all duration-300 px-2 py-1 rounded text-sm md:text-base font-mono underline decoration-1"
                     aria-label={`Navigate to ${item.toLowerCase()} section`}
                     onMouseEnter={playHover}
                     onClick={playClick}
@@ -1339,6 +1317,9 @@ export default function Portfolio() {
               </MotionWrapper>
             ))}
           </MotionStagger>
+          <p className="text-gray-700 text-center dark:text-gray-300 text-[12px]">
+            © 2025-present Thaw Zin Aung. All Rights Reserved.
+          </p>
         </div>
       </motion.footer>
 

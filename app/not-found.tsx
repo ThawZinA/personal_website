@@ -56,7 +56,7 @@ export default function NotFound() {
           </h1>
           <h2 className="text-2xl md:text-3xl text-white/95 mb-4 font-mono drop-shadow-lg">Oops! Page Not Found</h2>
           <p className="text-lg text-white/90 mb-8 font-mono max-w-md mx-auto leading-relaxed drop-shadow-md">
-            Looks like this page wandered off like a curious cat! The page you're looking for doesn't exist or has been
+            Looks like this page wandered off....like a curious cat. It doesn't exist or may has been
             moved.
           </p>
         </motion.div>
@@ -77,24 +77,8 @@ export default function NotFound() {
             >
               <Link href="/" aria-label="Go back to homepage">
                 <Home className="w-5 h-5 mr-2" aria-hidden="true" />
-                Back to Home
+                Wanna go back..?
               </Link>
-            </Button>
-          </motion.div>
-
-          <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.98 }}>
-            <Button
-              onClick={() => {
-                playClick()
-                window.history.back()
-              }}
-              variant="outline"
-              className="bg-white/20 hover:bg-white/30 text-white hover:text-white border-4 border-white hover:border-white font-mono font-bold px-6 py-3 transition-all duration-300 backdrop-blur-sm shadow-xl"
-              onMouseEnter={playHover}
-              aria-label="Go back to previous page"
-            >
-              <ArrowLeft className="w-5 h-5 mr-2" aria-hidden="true" />
-              Go Back
             </Button>
           </motion.div>
         </motion.div>

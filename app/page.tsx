@@ -139,7 +139,7 @@ export default function Portfolio() {
       case "Developer":
         return "I build robust and scalable web applications using modern technologies and best practices. From frontend frameworks to backend systems, I enjoy solving complex problems and turning ideas into functional, efficient code that makes a real difference. I'm constantly learning new technologies and staying updated with industry trends to deliver cutting-edge solutions."
       case "Teacher":
-        return "After graduating the matriculation exam with flying colors, I spent part of my free time coaching the junior high school student preparing for their exam. That experience taught me how to break complex theories into simpler terms and teach it to others."
+        return "After graduating the matriculation exam with flying colors, I spent part of my free time tutoring the junior high school students preparing for their exam. That experience taught me how to break complex theories into simpler terms and teach it to others."
       case "Cat lover":
         return "When I'm not coding or designing, you'll find me spending time watching movies, drawing, reading for occasionally in gym😄. But mainly I'd rather spend my feline friends. Cats have taught me  the importance of finding the perfect spot to work from😝."
       default:

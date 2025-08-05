@@ -43,7 +43,7 @@ export const projects: Project[] = [
     id: "grace-website",
     title: "Grace Website",
     description:
-      "An elegant e-commerce platform specialising in personalized accessories and custom jewellery. The website features a sophisticated design system, seamless shopping experience, and advanced customization tools that allow customers to create unique pieces tailored to their preferences. Built with a focus on luxury branding and user experience, the site showcases beautiful product galleries, customer testimonials, and an intuitive shopping interface.",
+      "An elegant e-commerce platform specialising in personalized accessories and custom jewelry. The website features a sophisticated design system, seamless shopping experience, and advanced customisation tools that allow customers to create unique pieces tailored to their preferences. Built with a focus on luxury branding and user experience, the site showcases beautiful product galleries, customer testimonials, and an intuitive shopping interface.",
     shortDescription: "E-commerce website for personalised accessories.",
     image: "/images/grace-website-preview.png",
     tools: ["React", "TypeScript", "Tailwind CSS", "Stripe", "Firebase"],
@@ -55,12 +55,12 @@ export const projects: Project[] = [
       "Product customisation with real-time preview",
       "Secure payment processing with Banking",
       "Product gallery with category filtering",
-      "SEO optimised product pages",
+      "SEO optimied product pages",
     ],
     challenges:
-      "Creating a user-friendly customization interface that could handle complex product variations while maintaining performance and ensuring the luxury brand aesthetic was preserved across all devices.",
+      "Creating a user-friendly customisation interface that could handle complex product variations while maintaining performance and ensuring the luxury brand aesthetic was preserved across all devices.",
     solution:
-      "Developed a modular component system with optimized rendering and implemented efficient state management for real-time customization previews. Used high-quality imagery and elegant typography to maintain the premium brand feel.",
+      "Developed a modular component system with optimised rendering and implemented efficient state management for real-time customisation previews. Used high-quality imagery and elegant typography to maintain the premium brand feel.",
   },
   {
     id: "acme-dashboard",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     category: "Web Application",
     year: "2025",
     client: "Freelance Project",
-    url: "https://thawzinag.dev/404",
+    url: "https://nextjs-dashboard-roan-omega-nb8oexu114.vercel.app/",
     features: [
       "Client relationship management",
       "Invoice generation and tracking",

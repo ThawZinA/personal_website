@@ -1215,7 +1215,7 @@ export default function Portfolio() {
                         </MotionWrapper>
                         <MotionWrapper variant="fadeIn">
                           <p className="max-w-[45ch] text-justify">
-                            You want to say hello and say something in mind to share? I love messages like that. I can't
+                            You want to say hello and have something in mind to share? I love messages like that. I can't
                             wait to hear from you!
                           </p>
                         </MotionWrapper>

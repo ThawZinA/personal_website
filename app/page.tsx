@@ -728,7 +728,7 @@ export default function Portfolio() {
                           <div className="mb-6">
                             <p className="max-w-[45ch] text-justify">
                               Mingalabar! I'm Thaw, a <span className="text-[#7391c8]">designer</span> and{" "}
-                              <span className="text-[#7391c8]">frontend developer</span> who enjoys being at the
+                              <span className="text-[#7391c8]">frontend developer</span> who enjoys working at the
                               intersection of business, design and code.
                             </p>
                           </div>
@@ -737,7 +737,7 @@ export default function Portfolio() {
                         <MotionWrapper variant="fadeIn">
                           <div className="space-y-4 text-gray-700 dark:text-gray-300 mb-6">
                             <p className="mb-2 max-w-[45ch] text-justify text-gray-800 dark:text-gray-200">
-                              I design and build clean, aesthetics and intuitive user interfaces for <span className="text-[#7391c8]">web</span> and <span className="text-[#7391c8]">mobile experience</span> with a focus on usability and accessibilty.
+                              I design and build clean, aesthetic and intuitive user interfaces for <span className="text-[#7391c8]">web</span> and <span className="text-[#7391c8]">mobile experience</span> with a focus on usability and accessibilty.
                             </p>
                           </div>
                         </MotionWrapper>

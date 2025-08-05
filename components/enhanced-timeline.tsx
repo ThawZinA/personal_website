@@ -43,7 +43,7 @@ const timelineData: TimelineItem[] = [
     id: "tutor",
     title: "TUTOR",
     period: "2012-2018",
-    description: "Taught to students for matriculation exam.",
+    description: "Tutoring to students for matriculation exam.",
     icon: "💻",
     delay: 600,
   },

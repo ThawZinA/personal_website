@@ -782,10 +782,10 @@ export default function Portfolio() {
               {/* About Me Section with Enhanced Animations */}
               <section
                 id="about"
-                className="px-4 sm:px-6 lg:px-12 py-16 bg-gray-50 dark:bg-gray-800 min-h-screen flex items-center"
+                className="px-4 sm:px-6 lg:px-12 py-16 bg-gray-50 dark:bg-gray-800 flex items-center"
                 aria-labelledby="about-heading"
               >
-                <div className="w-full">
+                <div className="w-full mt-6">
                   <MotionWrapper variant="slideUp" className="flex items-center gap-3 mb-8">
                     <motion.div
                       className="w-8 h-8 flex items-center justify-center"
@@ -1139,10 +1139,10 @@ export default function Portfolio() {
               {/* Contact Section with Enhanced Animations */}
               <section
                 id="contact"
-                className="px-4 sm:px-6 lg:px-12 py-12 bg-gray-50 dark:bg-gray-800 min-h-[50vh] flex items-center"
+                className="px-4 sm:px-6 lg:px-12 py-6 bg-gray-50 dark:bg-gray-800 min-h-[50vh] flex items-center"
                 aria-labelledby="contact-heading"
               >
-                <div className="w-full">
+                <div className="w-full mt-16">
                   <MotionWrapper variant="slideUp" className="flex items-center gap-3 mb-8">
                     <motion.div
                       className="w-8 h-8 flex items-center justify-center"
@@ -1202,13 +1202,13 @@ export default function Portfolio() {
                             <motion.a
                               href="mailto:thawzinaung199@gmail.com"
                               className="text-[#7391c8] hover:text-[#5f7ab8] underline focus:outline-none focus:ring-4 focus:ring-blue-300 rounded"
-                              aria-label="Send email to thawzinaung199@gmail.com"
+                              aria-label="Send email to thawzinaung419@gmail.com"
                               whileHover={{ scale: 1.05 }}
                               whileTap={{ scale: 0.98 }}
                               onMouseEnter={playHover}
                               onClick={playClick}
                             >
-                              thawzinaung199@gmail.com
+                              thawzinaung419@gmail.com
                             </motion.a>{" "}
                             and I will get back to you within a week.
                           </p>

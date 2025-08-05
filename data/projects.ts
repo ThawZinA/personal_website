@@ -126,6 +126,6 @@ export const projects: Project[] = [
     challenges:
       "Balancing feature richness with simplicity, accessibility, usability and aesthetics.",
     solution:
-      "Conducted extensive user research and implemented a continouse usability testing and CI/CD.",
+      "Conducted extensive user research and implemented a continuous usability testing and CI/CD.",
   },
 ]

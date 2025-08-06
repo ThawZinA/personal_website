@@ -106,6 +106,29 @@ export const projects: Project[] = [
       "Built with offline-first architecture using local SQLite database with automatic cloud sync when connectivity is restored.",
   },
   {
+    id: "Bits & Bytes",
+    title: "MDX-like blogposts website",
+    description:
+      "A modern website to showcase my blog posts. Features similar to MDX blog.",
+    shortDescription: "Personal portfolio website for Thaw",
+    image: "/images/personal-projects.png",
+    tools: ["React", "Next.js", "Tailwind", "Netlify"],
+    category: "Blog Page",
+    year: "2025",
+    client: "Freelance Project",
+    url: "https://mdx-blog-clone.netlify.app/",
+    features: [
+      "Blog List",
+      "Codesnippet demo with Bright",
+      "Sound On/Off",
+      "Dark Mode"
+    ],
+    challenges:
+      "",
+    solution:
+      "",
+  },
+  {
     id: "portfolio-website",
     title: "My Personal Portfolio Website",
     description:

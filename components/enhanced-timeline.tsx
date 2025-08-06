@@ -287,7 +287,7 @@ export function EnhancedTimeline() {
               <div key={item.id} className="flex items-center flex-shrink-0">
                 {/* Timeline Card with enhanced animations */}
                 <motion.div
-                  className={`relative bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-6 w-72 h-48 flex flex-col items-center justify-center text-center cursor-pointer timeline-card ${
+                  className={`relative bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-18 w-80 h-48 flex flex-col items-center justify-center text-center cursor-pointer timeline-card ${
                     isMobile && index === currentIndex
                       ? "scale-105 shadow-[6px_6px_0px_rgba(0,0,0,0.4)] dark:shadow-[6px_6px_0px_rgba(255,255,255,0.4)]"
                       : ""

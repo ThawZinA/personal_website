@@ -19,14 +19,13 @@ export const projects: Project[] = [
     id: "xplore-yangon",
     title: "Xplore Yangon",
     description:
-      "A comprehensive mobile application designed to help tourists and locals navigate Yangon city with ease. The app features interactive maps, local recommendations, cultural insights, and real-time navigation to make exploring Myanmar's largest city an unforgettable experience.",
+      "A UI/UX implementaion process for comprehensive mobile application designed to help tourists and locals navigate Yangon city with ease. The app features interactive maps, local recommendations, cultural insights, and real-time navigation to make exploring Myanmar's largest city an unforgettable experience.",
     shortDescription: "A mobile app for navigating Yangon.",
     image: "/images/xplore-yangon-preview.png",
-    tools: ["JavaScript","React", "TypeScript", "Google Maps API", "Firebase", "AdobeXD"],
+    tools: ["Figma","AdobeXD", "Google Maps API", "SurveyMonkey"],
     category: "Mobile App",
     year: "2019",
-    client: "",
-    url: "https://thawzinag.dev/404",
+    client: "BIT UID Project",
     features: [
       "Interactive city maps with offline support",
       "Local restaurant and attraction recommendations",
@@ -35,9 +34,9 @@ export const projects: Project[] = [
       "User reviews and ratings system",
     ],
     challenges:
-      "The main challenge was integrating accurate local data and ensuring the app works reliably in areas with poor internet connectivity.",
+      "The main challenge was integrating accurate local data and ensuring the app works simple enough non-technical users",
     solution:
-      "Implemented offline-first architecture with local data caching and progressive data sync when connectivity is available.",
+      "Conducted extensive user research and implemented a continuous usability testing and CI/CD.",
   },
   {
     id: "grace-website",

@@ -109,7 +109,7 @@ export const projects: Project[] = [
     id: "Bits & Bytes",
     title: "MDX-like blogposts website",
     description:
-      "A modern website to showcase my blog posts. Features similar to MDX blog.",
+      "A modern website to showcase blog posts. Features similar to MDX blog. As part of joy of react course.",
     shortDescription: "Personal portfolio website for Thaw",
     image: "/images/mdx-blog-preview.png",
     tools: ["React", "Next.js", "Tailwind", "Netlify"],

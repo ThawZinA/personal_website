@@ -215,7 +215,7 @@ export function ProjectDetailModal({ project, onBackToProjects }: ProjectDetailM
         </div>
 
         {/* Challenges & Solution */}
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* <div className="grid md:grid-cols-2 gap-6">
           <div
             className="bg-red-50 dark:bg-red-900/20 p-6 border-4 border-black dark:border-white"
             style={{ boxShadow: "4px 4px 0px rgba(0,0,0,0.3)" }}
@@ -234,7 +234,7 @@ export function ProjectDetailModal({ project, onBackToProjects }: ProjectDetailM
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-mono">{project.solution}</p>
           </div>
-        </div>
+        </div> */}
 
         {/* Project Link */}
         {project.url && (

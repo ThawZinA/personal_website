@@ -111,7 +111,7 @@ export const projects: Project[] = [
     description:
       "A modern website to showcase my blog posts. Features similar to MDX blog.",
     shortDescription: "Personal portfolio website for Thaw",
-    image: "/images/personal-projects.png",
+    image: "/images/mdx-blog-preview.png",
     tools: ["React", "Next.js", "Tailwind", "Netlify"],
     category: "Blog Page",
     year: "2025",

@@ -1042,11 +1042,11 @@ export default function Portfolio() {
                     <Suspense fallback={<ProjectCardSkeleton />}>
                       <MotionWrapper variant="slideLeft">
                         <motion.div
-                          onClick={() => handleProjectClick(projects.find((p) => p.id === "xplore-yangon")!)}
+                          onClick={() => handleProjectClick(projects.find((p) => p.id === "pizzeria-pos-dashboard")!)}
                           onKeyDown={(e) => {
                             if (e.key === "Enter" || e.key === " ") {
                               e.preventDefault()
-                              handleProjectClick(projects.find((p) => p.id === "xplore-yangon")!)
+                              handleProjectClick(projects.find((p) => p.id === "pizzeria-pos-dashboard")!)
                             }
                           }}
                           className="overflow-hidden bg-white dark:bg-gray-800 border-4 border-black dark:border-white transition-all duration-700 ease-out cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-300"
@@ -1068,17 +1068,17 @@ export default function Portfolio() {
                           <div className="p-0">
                             <div className="h-64 bg-[#daedea] border-b-4 border-black dark:border-white flex items-center justify-center p-4">
                               <LazyImage
-                                src={projects.find((p) => p.id === "xplore-yangon")?.image || "/placeholder.svg"}
-                                alt="Xplore Yangon project preview"
+                                src={projects.find((p) => p.id === "pizzeria-pos-dashboard")?.image || "/placeholder.svg"}
+                                alt="Restauratn POS project preview"
                                 className="w-full h-full object-contain"
                               />
                             </div>
                             <div className="p-6">
                               <h4 className="font-bold text-lg mb-2 text-black dark:text-white font-mono tracking-wider">
-                                XPLORE YANGON
+                                Pizzeria POS Dashboard
                               </h4>
                               <p className="text-gray-600 dark:text-gray-400 text-sm">
-                                A mobile app for navigating Yangon.
+                                A POS dashboard for a pizza restaurant.
                               </p>
                             </div>
                           </div>

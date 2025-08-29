@@ -1,53 +1,31 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useSoundEffects } from "../hooks/useSoundEffects"
-import type React from "react"
+import { Volume2, VolumeX } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 interface SoundButtonProps {
-  children: React.ReactNode
+  isSoundEnabled: boolean
+  onToggle: () => void
   className?: string
-  onClick?: () => void
-  onMouseEnter?: () => void
-  disabled?: boolean
-  [key: string]: any
 }
 
-export function SoundButton({
-  children,
-  className = "",
-  onClick,
-  onMouseEnter,
-  disabled = false,
-  ...props
-}: SoundButtonProps) {
-  const { playHover, playClick } = useSoundEffects()
-
-  const handleMouseEnter = () => {
-    if (!disabled) {
-      playHover()
-      onMouseEnter?.()
-    }
-  }
-
-  const handleClick = () => {
-    if (!disabled) {
-      playClick()
-      onClick?.()
-    }
-  }
-
+export function SoundButton({ isSoundEnabled, onToggle, className }: SoundButtonProps) {
   return (
-    <motion.button
-      className={className}
-      onMouseEnter={handleMouseEnter}
-      onClick={handleClick}
-      disabled={disabled}
-      whileHover={!disabled ? { scale: 1.02 } : {}}
-      whileTap={!disabled ? { scale: 0.98 } : {}}
-      {...props}
-    >
-      {children}
-    </motion.button>
+    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+      <Button
+        variant="ghost"
+        size="sm"
+        onClick={onToggle}
+        className={className}
+        aria-label={isSoundEnabled ? "Disable sound effects" : "Enable sound effects"}
+      >
+        {isSoundEnabled ? (
+          <Volume2 className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+        ) : (
+          <VolumeX className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+        )}
+      </Button>
+    </motion.div>
   )
 }

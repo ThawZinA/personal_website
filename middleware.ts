@@ -7,6 +7,7 @@ export function middleware(request: NextRequest) {
   // List of valid routes in your application
   const validRoutes = [
     "/",
+    "/works",
     "/api", // API routes
   ]
 
@@ -18,10 +19,10 @@ export function middleware(request: NextRequest) {
     return pathname.startsWith(route)
   })
 
-  // If it's not a valid route and not a static file, redirect to 404
+  // If it's not a valid route and not a static file, continue normally
   if (!isValidRoute && !pathname.startsWith("/_next") && !pathname.includes(".")) {
-    // Rewrite to the not-found page instead of redirecting
-    return NextResponse.rewrite(new URL("/not-found", request.url))
+    // Let Next.js handle 404s naturally instead of rewriting
+    return NextResponse.next()
   }
 
   return NextResponse.next()

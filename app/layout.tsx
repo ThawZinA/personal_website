@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Thaw Zin Portfolio",
     images: [
       {
-        url: "/images/grace-website-preview.png",
+        url: "https://thawzinag.dev/images/thaw-portfolio-preview.png",
         width: 1200,
         height: 630,
         alt: "Thaw Portfolio Preview",
@@ -51,10 +51,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
-    generator: 'v0.dev'
+   
 }
 
 export default function RootLayout({

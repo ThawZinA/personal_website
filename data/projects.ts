@@ -206,7 +206,6 @@ export const projects: Project[] = [
     ],
     technologies: {
       frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      backend: ["Next.js API Routes", "Node.js", 'Stripe  "Tailwind CSS', "Framer Motion"],
       backend: ["Next.js API Routes", "Node.js", "Stripe API"],
       database: ["MongoDB", "Stripe Dashboard"],
       tools: ["Vercel", "MongoDB Atlas", "Stripe CLI", "Figma"],

@@ -33,12 +33,12 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen max-w-7xl mx-auto bg-white dark:bg-gray-900 transition-colors duration-300">
       <Navigation isSoundEnabled={isSoundEnabled} onToggleSound={toggleSound} />
 
       <main>
         {/* Hero Section */}
-        <section className="pt-16 pb-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+        <section className="pt-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
               {/* Hero Content */}
@@ -109,43 +109,12 @@ export default function HomePage() {
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
-                  <Link href="/contact">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="border-[#7391c8] text-[#7391c8] hover:bg-[#7391c8] hover:text-white px-8 bg-transparent"
-                      onMouseEnter={playHover}
-                      onClick={playClick}
-                    >
-                      Get In Touch
-                    </Button>
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  className="flex items-center gap-8 pt-8"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6, duration: 0.6 }}
-                >
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-900 dark:text-white">50+</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Projects</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-900 dark:text-white">3+</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-900 dark:text-white">100%</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Client Satisfaction</div>
-                  </div>
                 </motion.div>
               </motion.div>
 
               {/* Hero Image */}
               <motion.div
-                className="relative"
+                className="relative flex justify-center"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -154,11 +123,11 @@ export default function HomePage() {
                   <LazyImage
                     src="/images/hero.png"
                     alt="Thaw Zin Aung - Web Designer & Developer"
-                    className="w-full h-auto rounded-2xl shadow-2xl"
+                    className="max-w-[350px] h-auto rounded-2xl"
                   />
                 </div>
                 <motion.div
-                  className="absolute -top-4 -right-4 w-full h-full bg-[#7391c8]/20 rounded-2xl -z-10"
+                  className="absolute -top-4 -right-4 max-w-[350px] h-auto"
                   animate={{
                     y: [0, -10, 0],
                     x: [0, 5, 0],

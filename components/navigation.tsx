@@ -68,7 +68,7 @@ export function Navigation({ isSoundEnabled, onToggleSound }: NavigationProps) {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-12 lg:px-16">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/">
@@ -90,7 +90,7 @@ export function Navigation({ isSoundEnabled, onToggleSound }: NavigationProps) {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 md:space-x-12">
             {navItems.map((item) => (
               <div key={item.id}>
                 <Link href={item.href}>

@@ -63,12 +63,6 @@ export default function AboutPage() {
     },
   ]
 
-  const stats = [
-    { label: "Projects Completed", value: "50+", icon: Code },
-    { label: "Happy Clients", value: "30+", icon: Users },
-    { label: "Years Experience", value: "3+", icon: Coffee },
-    { label: "Technologies", value: "20+", icon: Palette },
-  ]
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
@@ -136,17 +130,6 @@ export default function AboutPage() {
                     <Download className="mr-2 w-4 h-4" />
                     Download CV
                   </Button>
-                  <Link href="/contact">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="border-[#7391c8] text-[#7391c8] hover:bg-[#7391c8] hover:text-white px-8 bg-transparent"
-                      onMouseEnter={playHover}
-                      onClick={playClick}
-                    >
-                      Let's Talk
-                    </Button>
-                  </Link>
                 </motion.div>
               </motion.div>
 
@@ -179,30 +162,6 @@ export default function AboutPage() {
                   </div>
                 </div>
               </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="py-20 bg-white dark:bg-gray-900">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  className="text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="w-16 h-16 bg-[#7391c8]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-8 h-8 text-[#7391c8]" />
-                  </div>
-                  <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{stat.value}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
-                </motion.div>
-              ))}
             </div>
           </div>
         </section>
@@ -357,49 +316,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-white dark:bg-gray-900">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              className="text-center max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                Let's Create Something Amazing Together
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                I'm always excited to work on new projects and collaborate with amazing people. Let's discuss how we can
-                bring your ideas to life.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
-                  <Button
-                    size="lg"
-                    className="bg-[#7391c8] hover:bg-[#5f7ab8] text-white px-8"
-                    onMouseEnter={playHover}
-                    onClick={playClick}
-                  >
-                    Start a Project
-                  </Button>
-                </Link>
-                <Link href="/works">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-[#7391c8] text-[#7391c8] hover:bg-[#7391c8] hover:text-white px-8 bg-transparent"
-                    onMouseEnter={playHover}
-                    onClick={playClick}
-                  >
-                    View My Work
-                  </Button>
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </section>
       </main>
 
       <Footer />

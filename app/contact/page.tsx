@@ -468,52 +468,6 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-
-        {/* FAQ Section */}
-        <section className="py-20 bg-white dark:bg-gray-900">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto">
-              <motion.div
-                className="text-center mb-16"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                  Frequently Asked <span className="text-[#7391c8]">Questions</span>
-                </h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400">
-                  Here are some common questions I get asked. Don't see your question? Feel free to reach out!
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <Accordion type="single" collapsible className="space-y-4">
-                  {faqs.map((faq, index) => (
-                    <AccordionItem
-                      key={index}
-                      value={`item-${index}`}
-                      className="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 px-6"
-                    >
-                      <AccordionTrigger className="text-left text-gray-900 dark:text-white hover:text-[#7391c8] dark:hover:text-[#7391c8] py-4">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-gray-600 dark:text-gray-400 pb-4">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </motion.div>
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />

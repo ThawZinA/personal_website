@@ -4,7 +4,6 @@ export interface Project {
   description: string
   longDescription: string
   image: string
-  images: string[]
   tags: string[]
   category: string
   liveUrl?: string
@@ -39,12 +38,6 @@ export const projects: Project[] = [
     longDescription:
       "A comprehensive form builder application that allows users to create complex forms through an intuitive drag-and-drop interface. Features real-time preview, advanced validation, and multiple export options including HTML, React components, and JSON schemas.",
     image: "/images/form-builder-preview.png",
-    images: [
-      "/images/form-builder-preview.png",
-      "/images/form-builder-editor.png",
-      "/images/form-builder-preview-mode.png",
-      "/images/form-builder-export.png",
-    ],
     tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     category: "Web Application",
     liveUrl: "https://v0-form-builder-ten-nu.vercel.app/",
@@ -101,12 +94,6 @@ export const projects: Project[] = [
     longDescription:
       "An interactive CSS Grid layout generator that helps developers learn and create complex grid layouts. Features visual grid editing, code generation, and educational resources to master CSS Grid.",
     image: "/images/gridable-preview.png",
-    images: [
-      "/images/gridable-preview.png",
-      "/images/gridable-editor.png",
-      "/images/gridable-code.png",
-      "/images/gridable-examples.png",
-    ],
     tags: ["React", "TypeScript", "CSS Grid", "Tailwind CSS", "Vite"],
     category: "Developer Tool",
     liveUrl: "https://gridable.netlify.app/",
@@ -163,12 +150,6 @@ export const projects: Project[] = [
     longDescription:
       "A modern e-commerce platform specializing in personalized accessories and gifts. Features a custom product configurator, secure payment processing, and an intuitive admin dashboard for inventory management.",
     image: "/images/grace-website-preview.png",
-    images: [
-      "/images/grace-website-preview.png",
-      "/images/grace-website-products.png",
-      "/images/grace-website-customizer.png",
-      "/images/grace-website-checkout.png",
-    ],
     tags: ["React", "Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
     category: "E-commerce",
     liveUrl: "https://gracesouvenirs.netlify.app/",
@@ -225,12 +206,6 @@ export const projects: Project[] = [
     longDescription:
       "A comprehensive business analytics dashboard that provides real-time insights into key performance metrics. Features interactive charts, customizable widgets, and advanced reporting capabilities.",
     image: "/images/acme-dashboard-preview.png",
-    images: [
-      "/images/acme-dashboard-preview.png",
-      "/images/acme-dashboard-analytics.png",
-      "/images/acme-dashboard-reports.png",
-      "/images/acme-dashboard-settings.png",
-    ],
     tags: ["Next.js", "Supabase", "Charts", "TypeScript", "Tailwind CSS"],
     category: "Dashboard",
     liveUrl: "https://acme-dashboard-demo.vercel.app/",
@@ -349,12 +324,7 @@ export const projects: Project[] = [
     longDescription:
       "A feature-rich blog platform built with Next.js and MDX, offering a seamless writing experience with support for interactive components, syntax highlighting, and SEO optimization.",
     image: "/images/mdx-blog-preview.png",
-    images: [
-      "/images/mdx-blog-preview.png",
-      "/images/mdx-blog-editor.png",
-      "/images/mdx-blog-post.png",
-      "/images/mdx-blog-admin.png",
-    ],
+
     tags: ["Next.js", "MDX", "TypeScript", "Tailwind CSS", "Contentlayer"],
     category: "Blog Platform",
     liveUrl: "https://mdx-blog-clone.netlify.app/",
@@ -395,68 +365,6 @@ export const projects: Project[] = [
       backend: ["Next.js API Routes", "Contentlayer"],
       database: ["File System", "Git"],
       tools: ["Vercel", "Contentlayer", "Prism.js", "Fuse.js"],
-    },
-  },
-  {
-    id: "pizzeria-pos",
-    title: "Pizzeria POS System",
-    description: "Point of sale system for restaurant management",
-    longDescription:
-      "A comprehensive point of sale system designed specifically for pizzerias and restaurants. Features order management, inventory tracking, and sales analytics.",
-    image: "/images/pizzeria-pos-preview.png",
-    images: [
-      "/images/pizzeria-pos-preview.png",
-      "/images/pizzeria-pos-orders.png",
-      "/images/pizzeria-pos-menu.png",
-      "/images/pizzeria-pos-analytics.png",
-    ],
-    tags: ["React", "Node.js", "MongoDB", "Express", "Socket.io"],
-    category: "POS System",
-    liveUrl: "https://pizzeria-pos-demo.vercel.app/",
-    githubUrl: "https://github.com/thawzinag/pizzeria-pos",
-    featured: false,
-    completedAt: "2024-06-25",
-    client: "Mario's Pizzeria",
-    duration: "4 months",
-    role: "Full Stack Developer",
-    features: [
-      "Order management with real-time updates",
-      "Menu customization and pricing",
-      "Inventory tracking and alerts",
-      "Sales analytics and reporting",
-      "Customer management system",
-      "Payment processing integration",
-      "Kitchen display system",
-      "Multi-location support",
-      "Staff management and permissions",
-      "Receipt printing functionality",
-    ],
-    challenges: [
-      "Building real-time order synchronization across devices",
-      "Creating an intuitive interface for restaurant staff",
-      "Implementing reliable payment processing",
-      "Handling high-volume order processing during peak hours",
-      "Ensuring system reliability and uptime",
-    ],
-    solutions: [
-      "Used Socket.io for real-time communication between devices",
-      "Designed a touch-friendly interface optimized for tablets",
-      "Integrated multiple payment gateways with fallback options",
-      "Implemented queue management and load balancing",
-      "Built comprehensive error handling and backup systems",
-    ],
-    technologies: {
-      frontend: ["React", "TypeScript", "Tailwind CSS", "Socket.io Client"],
-      backend: ["Node.js", "Express", "Socket.io", "JWT"],
-      database: ["MongoDB", "Redis"],
-      tools: ["Docker", "AWS", "Stripe", "Thermal Printer API"],
-    },
-    testimonial: {
-      content:
-        "This POS system streamlined our operations completely. Order processing is now 3x faster and we have much better insights into our business.",
-      author: "Mario Rossi",
-      position: "Owner",
-      company: "Mario's Pizzeria",
     },
   },
 ]

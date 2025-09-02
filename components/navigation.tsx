@@ -80,7 +80,8 @@ export function Navigation({ isSoundEnabled, onToggleSound }: NavigationProps) {
               onClick={playClick}
             >
               <div className="w-10 h-10 rounded-full overflow-hidden">
-                <LazyImage src="/images/logo.png" alt="Thaw Zin Aung" className="w-full h-full object-cover" />
+                {/* <LazyImage src="/images/logo.png" alt="Thaw Zin Aung" className="w-full h-full object-cover" /> */}
+                <img src="/images/logo.png" alt="Thaw Zin Aung" className="w-full h-full object-cover" />
               </div>
               <div className="hidden sm:block">
                 <h1 className="font-semibold text-black dark:text-white">THAW ZIN AUNG</h1>
@@ -122,7 +123,7 @@ export function Navigation({ isSoundEnabled, onToggleSound }: NavigationProps) {
             <motion.button
               onClick={toggleTheme}
               className="w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex items-center justify-center"
-              whileHover={{ scale: 1.1, rotate: 180 }}
+              whileHover={{ scale: 1.1, rotate: 360 }}
               whileTap={{ scale: 0.9 }}
               onMouseEnter={playHover}
               aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}

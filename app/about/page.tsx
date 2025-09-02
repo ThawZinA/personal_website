@@ -11,6 +11,7 @@ import { LazyImage } from "../../components/lazy-image"
 import { Navigation } from "../../components/navigation"
 import { Footer } from "../../components/footer"
 import { useSoundEffects } from "../../hooks/useSoundEffects"
+import { timeline } from "@/data/constants"
 
 export default function AboutPage() {
   const [isSoundEnabled, setIsSoundEnabled] = useState(true)
@@ -28,41 +29,6 @@ export default function AboutPage() {
     setIsSoundEnabled(newSoundState)
     localStorage.setItem("soundEnabled", newSoundState.toString())
   }
-
-  const skills = {
-    frontend: ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Framer Motion"],
-    backend: ["Node.js", "Express", "MongoDB", "PostgreSQL", "Supabase", "Firebase"],
-    tools: ["Git", "Docker", "Figma", "Adobe XD", "VS Code", "Vercel", "Netlify"],
-    design: ["UI/UX Design", "Responsive Design", "Prototyping", "Wireframing", "User Research"],
-  }
-
-  const timeline = [
-    {
-      year: "2024",
-      title: "Senior Full Stack Developer",
-      company: "Freelance",
-      description: "Leading complex web development projects and mentoring junior developers.",
-    },
-    {
-      year: "2023",
-      title: "Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      description: "Developed scalable web applications using modern technologies and best practices.",
-    },
-    {
-      year: "2022",
-      title: "Frontend Developer",
-      company: "Digital Agency",
-      description: "Created responsive and interactive user interfaces for various client projects.",
-    },
-    {
-      year: "2021",
-      title: "Junior Web Developer",
-      company: "StartupXYZ",
-      description: "Started my professional journey building websites and learning industry standards.",
-    },
-  ]
-
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
@@ -167,55 +133,7 @@ export default function AboutPage() {
         </section>
 
         {/* Skills Section */}
-        <section className="py-20 bg-gray-50 dark:bg-gray-800/50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Skills & <span className="text-[#7391c8]">Expertise</span>
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                I work with a variety of technologies and tools to bring ideas to life. Here's what I'm proficient in.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {Object.entries(skills).map(([category, skillList], index) => (
-                <motion.div
-                  key={category}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="h-full bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700">
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 capitalize">
-                        {category === "frontend" ? "Frontend" : category === "backend" ? "Backend" : category}
-                      </h3>
-                      <div className="space-y-2">
-                        {skillList.map((skill) => (
-                          <Badge
-                            key={skill}
-                            variant="secondary"
-                            className="mr-2 mb-2 bg-[#7391c8]/10 text-[#7391c8] border border-[#7391c8]/20"
-                          >
-                            {skill}
-                          </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        
 
         {/* Timeline Section */}
         <section className="py-20 bg-white dark:bg-gray-900">

@@ -12,6 +12,8 @@ import { Navigation } from "../components/navigation"
 import { Footer } from "../components/footer"
 import { useSoundEffects } from "../hooks/useSoundEffects"
 import { getFeaturedProjects } from "../data/projects"
+import { GitHubLogoIcon, InstagramLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons"
+import { skills } from "@/data/constants"
 
 export default function HomePage() {
   const [isSoundEnabled, setIsSoundEnabled] = useState(true)
@@ -38,7 +40,7 @@ export default function HomePage() {
 
       <main>
         {/* Hero Section */}
-        <section className="pt-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+        <section className="pt-16 bg-gray-50 dark:bg-gray-800/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
               {/* Hero Content */}
@@ -50,17 +52,21 @@ export default function HomePage() {
               >
                 <div className="space-y-4">
                   <motion.div
-                    className="inline-block"
+                    className="flex max-w-[60%] justify-between items-center bg-[#7391c8]/30rounded"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
-                  >
-                    <Badge
-                      variant="secondary"
-                      className="bg-[#7391c8]/10 text-[#7391c8] border border-[#7391c8]/20 px-4 py-2"
-                    >
-                      👋 Hello, I'm Thaw Zin Aung
-                    </Badge>
+                  > 
+                    <span className="text-bold">___________________</span>
+                    <Link href="https://github.com/ThawZinA" className="mr-4">
+                      <GitHubLogoIcon  className="hover:scale-130 transition-transform" />
+                    </Link>
+                    <Link href="https://www.linkedin.com/in/thaw-zin-ag419/" className="mr-6">
+                      <LinkedInLogoIcon className="hover:scale-130 transition-transform" />
+                    </Link>
+                    <Link href="https://www.instagram.com/__thaw_/" className="mr-4">
+                      <InstagramLogoIcon className="hover:scale-130 transition-transform" />
+                    </Link>
                   </motion.div>
 
                   <motion.h1
@@ -139,6 +145,57 @@ export default function HomePage() {
                   }}
                 />
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Skills Section */}
+        <section className="py-20 bg-gray-50 dark:bg-gray-800/50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                Skills & <span className="text-[#7391c8]">Expertise</span>
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                I work with a variety of technologies and tools to bring ideas to life. Here's what I'm proficient in.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {Object.entries(skills).map(([category, skillList], index) => (
+                <motion.div
+                  key={category}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="h-full bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700">
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 capitalize">
+                        {category === "frontend" ? "Frontend" : category === "backend" ? "Backend" : category}
+                      </h3>
+                      <div className="space-y-2">
+                        {skillList.map((skill) => (
+                          <Badge
+                            key={skill}
+                            variant="secondary"
+                            className="mr-2 mb-2 bg-[#7391c8]/10 text-[#7391c8] border border-[#7391c8]/20"
+                          >
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>

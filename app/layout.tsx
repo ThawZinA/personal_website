@@ -18,9 +18,13 @@ export const metadata: Metadata = {
   keywords: ["Thaw Zin Aung", "Full Stack Developer", "UI/UX Designer", "Web Developer", "Portfolio"],
   authors: [{ name: "Thaw Zin Aung" }],
   creator: "Thaw Zin Aung",
+  generator: "Next.js",
+  alternates: {
+    canonical: "https://thawzinag.dev",
+  },
   openGraph: {
-    title: "Thaw | Full Stack Developer & Designer",
-    description: "Portfolio of Thaw Zin Aung - Full Stack Developer, UI/UX Designer, and Creative Problem Solver",
+    title: "Thaw | Web Developer & Designer",
+    description: "Portfolio of Thaw Zin Aung - Web Developer, UI/UX Designer",
     url: "https://thawzinag.dev",
     siteName: "Thaw Zin Portfolio",
     images: [
@@ -37,9 +41,17 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Thaw | Full Stack Developer & Designer",
-    description: "Portfolio of Grace Thaw - Full Stack Developer, UI/UX Designer, and Creative Problem Solver",
-    images: ["/images/grace-website-preview.png"],
+    description: "Portfolio of Thaw Zin Aung - Full Stack Developer, UI/UX Designer, and Creative Problem Solver",
+    images: ["/images/hero.png"],
   },
+   appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Thaw Portfolio",
+  },
+  //   verification: {
+  //   google: "google-site-verification-code",
+  // },
   robots: {
     index: true,
     follow: true,
@@ -50,6 +62,7 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+    
   },
    
 }
@@ -68,6 +81,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#ffffff" />
+        <meta name="google-site-verification" content="76GEO_aF8awyo1BXq7N26B606Ggzxc10y6GZSdXE0Ms" />
       </head>
       <body className={roboto.className}>
         <Suspense fallback={null}>

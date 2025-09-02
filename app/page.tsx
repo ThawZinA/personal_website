@@ -59,13 +59,13 @@ export default function HomePage() {
                   > 
                     <span className="text-bold">___________________</span>
                     <Link href="https://github.com/ThawZinA" className="mr-4">
-                      <GitHubLogoIcon  className="hover:scale-130 transition-transform" />
+                      <GitHubLogoIcon  className="hover:scale-[1.3] transition-transform" />
                     </Link>
                     <Link href="https://www.linkedin.com/in/thaw-zin-ag419/" className="mr-6">
-                      <LinkedInLogoIcon className="hover:scale-130 transition-transform" />
+                      <LinkedInLogoIcon className="hover:scale-[1.3] transition-transform" />
                     </Link>
                     <Link href="https://www.instagram.com/__thaw_/" className="mr-4">
-                      <InstagramLogoIcon className="hover:scale-130 transition-transform" />
+                      <InstagramLogoIcon className="hover:scale-[1.3] transition-transform" />
                     </Link>
                   </motion.div>
 

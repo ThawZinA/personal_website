@@ -48,7 +48,6 @@ export function Navigation({ isSoundEnabled, onToggleSound }: NavigationProps) {
     { id: "home", label: "HOME", href: "/" },
     { id: "about", label: "ABOUT", href: "/about" },
     { id: "works", label: "WORKS", href: "/works" },
-    { id: "contact", label: "CONTACT", href: "/contact" },
   ]
 
   const getActiveSection = () => {

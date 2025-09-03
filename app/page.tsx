@@ -12,8 +12,7 @@ import { Navigation } from "../components/navigation"
 import { Footer } from "../components/footer"
 import { useSoundEffects } from "../hooks/useSoundEffects"
 import { getFeaturedProjects } from "../data/projects"
-import { GitHubLogoIcon, InstagramLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons"
-import { skills } from "@/data/constants"
+import { contactMethods, skills, socialLinks } from "@/data/constants"
 
 export default function HomePage() {
   const [isSoundEnabled, setIsSoundEnabled] = useState(true)
@@ -40,7 +39,7 @@ export default function HomePage() {
 
       <main>
         {/* Hero Section */}
-        <section className="pt-16 bg-gray-50 dark:bg-gray-800/50">
+        <section className="pt-16 dark:bg-gray-800/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
               {/* Hero Content */}
@@ -50,7 +49,7 @@ export default function HomePage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="space-y-4">
+                <div className="space-y-4 pt-4">
                   <motion.div
                     className="flex max-w-[60%] justify-between items-center bg-[#7391c8]/30rounded"
                     initial={{ opacity: 0, y: 20 }}
@@ -58,26 +57,33 @@ export default function HomePage() {
                     transition={{ delay: 0.2, duration: 0.6 }}
                   > 
                     <span className="text-bold">___________________</span>
-                    <Link href="https://github.com/ThawZinA" className="mr-4">
-                      <GitHubLogoIcon  className="hover:scale-[1.3] transition-transform" />
-                    </Link>
-                    <Link href="https://www.linkedin.com/in/thaw-zin-ag419/" className="mr-6">
-                      <LinkedInLogoIcon className="hover:scale-[1.3] transition-transform" />
-                    </Link>
-                    <Link href="https://www.instagram.com/__thaw_/" className="mr-4">
-                      <InstagramLogoIcon className="hover:scale-[1.3] transition-transform" />
-                    </Link>
+                    {socialLinks.map((social) => (
+                                      <Button
+                                        key={social.label}
+                                        variant="ghost"
+                                        size="sm"
+                                        className={`text-gray-600 dark:text-gray-400 ${social.color} transition-colors`}
+                                        onClick={() => {
+                                          playClick()
+                                          window.open(social.href, "_blank")
+                                        }}
+                                        onMouseEnter={playHover}
+                                        aria-label={social.label}
+                                      >
+                                        <social.icon className="w-5 h-5" />
+                                      </Button>
+                                    ))}
                   </motion.div>
 
                   <motion.h1
-                    className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight"
+                    className="text-2xl md:text-[48px] leading-[1.6] font-bold text-gray-900 dark:text-white"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.6 }}
                   >
-                    Web Designer &{" "}
+                    Hi, I'm {" "}
                     <span className="text-[#7391c8] relative">
-                      Developer
+                      Thaw Zin Aung {" "}
                       <motion.div
                         className="absolute -bottom-2 left-0 right-0 h-1 bg-[#7391c8]/30 rounded-full"
                         initial={{ scaleX: 0 }}
@@ -88,13 +94,12 @@ export default function HomePage() {
                   </motion.h1>
 
                   <motion.p
-                    className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl"
+                    className="text-lg pt-6 text-gray-600 dark:text-gray-400 italic leading-relaxed max-w-2xl text-justify"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.6 }}
                   >
-                    I create beautiful, functional, and user-centered digital experiences. With a passion for clean code
-                    and elegant design, I bring ideas to life through modern web technologies.
+                    --a frontend developer and designer crafting modern, accessible web experiences.
                   </motion.p>
                 </div>
 
@@ -162,12 +167,13 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                 Skills & <span className="text-[#7391c8]">Expertise</span>
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                I work with a variety of technologies and tools to bring ideas to life. Here's what I'm proficient in.
+              <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                Aside from courses included in my degree, I've taken <span className="font-semibold">Joy Of React </span>,<span className="font-semibold">Meta Front-End Developer Professional Certificate</span>, <span className="font-semibold">Google UX Design Professional Certificate</span> to enhance my skills.
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              
               {Object.entries(skills).map(([category, skillList], index) => (
                 <motion.div
                   key={category}
@@ -324,8 +330,76 @@ export default function HomePage() {
             </motion.div>
           </div>
         </section>
-      </main>
+      
+      {/* Contact Section */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-800/50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                Let's <span className="text-[#7391c8]">Build</span> something together.
+              </h2>
+              
+            </motion.div>
 
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              <motion.div
+                className="col-span-1"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-base text-gray-600 dark:text-gray-400">
+                  Feel free to reach out if you are looking for a developer, have a question or just want to connect. I'm always happy for new opportunities, collaborations, and friends.
+                </p>
+                <Link type="email" href="mailto:thawzinag419@gmail.com" className="font-bold">
+                  thawzinag419@gmail.com
+                </Link>
+                <h3 className="text-xl text-gray-900 dark:text-white mb-6">Aside from github and linkedin, you can find more side of me on instagram.</h3>
+                <div className="flex justify-center gap-6">
+                  {socialLinks.map((social) => (
+                    <Button
+                      key={social.label}
+                      variant="ghost"
+                      size="sm"
+                      className={`text-gray-600 dark:text-gray-400 ${social.color} transition-colors`}
+                      onClick={() => {
+                        playClick()
+                        window.open(social.href, "_blank")
+                      }}
+                      onMouseEnter={playHover}
+                      aria-label={social.label}
+                    >
+                      <social.icon className="w-5 h-5" />
+                    </Button>
+                  ))}
+                </div>
+              </motion.div>
+              {/* Masonry photo grid in the last column */}
+              <motion.div
+                className="col-span-2 hidden md:block"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="grid grid-cols-3 grid-rows-2 gap-1 h-full">
+                  <img src="/images/masonary_1.jpg" alt="Photo 1" className="rounded-lg object-cover  col-span-1 row-span-2 h-[400px]" />
+                  <img src="/images/masonary_2.jpg" alt="Photo 2" className="rounded-lg object-cover  col-span-2 row-span-1 w-[100%] h-[200px]" />
+                  <img src="/images/masonary_3.jpg" alt="Photo 3" className="rounded-lg object-cover  col-span-2 row-span-1 w-[100%] h-[200px]" />
+                </div>
+              </motion.div>
+              
+            </div>
+          </div>
+        </section>
+      </main>           
       <Footer />
     </div>
   )

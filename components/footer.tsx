@@ -14,15 +14,9 @@ export function Footer() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-600 dark:text-gray-400 flex items-center justify-center gap-2">
-            Made with{" "}
-            <motion.span
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-            >
-              <Heart className="w-4 h-4 text-red-500 fill-current" />
-            </motion.span>{" "}
-            by Thaw Zin Aung © {new Date().getFullYear()}
+          <p className="text-sm text-gray-600/60 dark:text-gray-400 flex items-center justify-center gap-2">
+            &copy; {new Date().getFullYear()}. All rights reserved. Made with{" "}
+            <Heart className="w-4 h-4 text-[#5f7ab8] animate-pulse" /> by Thaw Zin Aung.
           </p>
         </motion.div>
       </div>

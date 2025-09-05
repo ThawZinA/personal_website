@@ -76,7 +76,7 @@ export default function HomePage() {
                   </motion.div>
 
                   <motion.h1
-                    className="text-2xl md:text-[48px] leading-[1.6] font-bold text-gray-900 dark:text-white"
+                    className="text-xl md:text-[38px] leading-[1.6] font-bold text-gray-900 dark:text-white"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.6 }}
@@ -94,7 +94,7 @@ export default function HomePage() {
                   </motion.h1>
 
                   <motion.p
-                    className="text-lg pt-6 text-gray-600 dark:text-gray-400 italic leading-relaxed max-w-2xl text-justify"
+                    className="text-base pt-6 dark:text-gray-400 italic leading-relaxed max-w-2xl text-justify"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.6 }}
@@ -134,7 +134,7 @@ export default function HomePage() {
                   <LazyImage
                     src="/images/hero.png"
                     alt="Thaw Zin Aung - Web Designer & Developer"
-                    className="max-w-[350px] h-auto rounded-2xl"
+                    className="max-w-[320px] h-auto rounded-2xl"
                   />
                 </div>
                 <motion.div
@@ -155,19 +155,25 @@ export default function HomePage() {
         </section>
 
         {/* Skills Section */}
-        <section className="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <section className="py-20 dark:bg-gray-800/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              className="text-center mb-16"
+              className="mb-16"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative">
                 Skills & <span className="text-[#7391c8]">Expertise</span>
+                <motion.div
+                        className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800 dark:bg-white-900 rounded-full"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ delay: 0.8, duration: 0.6 }}
+                      />
               </h2>
-              <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl text-justify">
                 Aside from courses included in my degree, I've taken <span className="font-semibold">Joy Of React </span>,<span className="font-semibold">Meta Front-End Developer Professional Certificate</span>, <span className="font-semibold">Google UX Design Professional Certificate</span> to enhance my skills.
               </p>
             </motion.div>
@@ -207,17 +213,23 @@ export default function HomePage() {
         </section>
 
         {/* Featured Works Section */}
-        <section className="py-20 bg-white dark:bg-gray-900">
+        <section className="py-20 dark:bg-gray-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              className="text-center mb-16"
+              className="mb-16"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative">
                 Featured <span className="text-[#7391c8]">Works</span>
+                <motion.div
+                        className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800 dark:bg-white-900 rounded-full"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ delay: 0.8, duration: 0.6 }}
+                      />
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 Here are some of my recent projects that showcase my skills and passion for creating exceptional digital
@@ -332,17 +344,23 @@ export default function HomePage() {
         </section>
       
       {/* Contact Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800/50">
+      <section className="py-20 dark:bg-gray-800/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              className="text-center mb-16"
+              className="mb-16"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Let's <span className="text-[#7391c8]">Build</span> something together.
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative">
+                Let's <span className="text-[#7391c8]">Build</span> Something Together
+                <motion.div
+                        className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800 dark:bg-white-900 rounded-full"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ delay: 0.8, duration: 0.6 }}
+                      />
               </h2>
               
             </motion.div>
@@ -400,7 +418,6 @@ export default function HomePage() {
           </div>
         </section>
       </main>           
-      <Footer />
     </div>
   )
 }

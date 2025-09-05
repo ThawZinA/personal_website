@@ -5,6 +5,8 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Analytics } from "@vercel/analytics/react"
 import { Suspense } from "react"
+import Container from "@/components/Container"
+import { Footer } from "@/components/footer"
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -86,7 +88,10 @@ export default function RootLayout({
       <body className={roboto.className}>
         <Suspense fallback={null}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            {children}
+            <Container >
+               {children}
+            </Container>
+            <Footer />
           </ThemeProvider>
         </Suspense>
         <Analytics />

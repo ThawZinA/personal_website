@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -27,8 +27,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   // Sound effects
   const { playHover, playClick } = useSoundEffects(isSoundEnabled)
 
-  // Find the project
-  const project = projects.find((p) => p.id === params.id)
+  // Unwrap params for Next.js future compatibility
+  const { id } = params
+  const project = projects.find((p) => p.id === id)
 
   useEffect(() => {
     // Check for saved theme preference
@@ -71,7 +72,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     { id: "home", label: "HOME", href: "/" },
     { id: "about", label: "ABOUT", href: "/about" },
     { id: "works", label: "WORKS", href: "/works" },
-    { id: "contact", label: "CONTACT", href: "/contact" },
   ]
 
   if (!project) {
@@ -119,14 +119,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       "Tailwind CSS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
       CSS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
       HTML: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      Python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-      Django: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-      Flask: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
-      Vue: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-      "Vue.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-      Angular: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
-      Svelte: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
-      Docker: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
       AWS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
       Vercel: "https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico",
       Netlify: "https://www.netlify.com/favicon.ico",
@@ -136,9 +128,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       Figma: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
       "Adobe XD": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg",
       Photoshop: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg",
-      Illustrator: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg",
-      Stripe: "https://stripe.com/favicon.ico",
-      PayPal: "https://www.paypal.com/favicon.ico",
       Redis: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
       GraphQL: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
       Prisma: "https://www.prisma.io/favicon.ico",
@@ -324,7 +313,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       Plotly: "https://plotly.com/favicon.ico",
       Highcharts: "https://www.highcharts.com/favicon.ico",
       ApexCharts: "https://apexcharts.com/favicon.ico",
-      "Chart.js": "https://www.chartjs.org/favicon.ico",
       Visx: "https://airbnb.io/visx/favicon.ico",
       "Observable Plot": "https://observablehq.com/favicon.ico",
       Leaflet: "https://leafletjs.com/favicon.ico",
@@ -435,12 +423,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       "React Lazy Load Image Component":
         "https://github.com/Aljullu/react-lazy-load-image-component/raw/master/logo.png",
       "React Lazyload": "https://github.com/twobin/react-lazyload/raw/master/logo.png",
-      "React Intersection Observer":
-        "https://github.com/thebuilder/react-intersection-observer/raw/master/story/logo.svg",
+      
       "React Visibility Sensor": "https://github.com/joshwnj/react-visibility-sensor/raw/master/logo.png",
       "React In Viewport": "https://github.com/roderickhsiao/react-in-viewport/raw/master/logo.png",
       "React On Screen": "https://github.com/fkhadra/react-on-screen/raw/master/logo.png",
-      "React Waypoint": "https://github.com/civiccc/react-waypoint/raw/master/logo.png",
+    
       "React Scroll": "https://github.com/fisshy/react-scroll/raw/master/logo.png",
       "React Scrollspy": "https://github.com/makotot/react-scrollspy-nav/raw/master/logo.png",
       "React Scrollspy Nav": "https://github.com/makotot/react-scrollspy-nav/raw/master/logo.png",
@@ -456,11 +443,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       "React Mouse Parallax": "https://github.com/suhailsulu/react-mouse-parallax/raw/master/logo.png",
       "React Reveal": "https://github.com/rnosov/react-reveal/raw/master/logo.png",
       "React Fade In": "https://github.com/joshwcomeau/react-fade-in/raw/master/logo.png",
-      "React Transition Group": "https://reactcommunity.org/favicon.ico",
+     
       "React Flip Move": "https://github.com/joshwcomeau/react-flip-move/raw/master/logo.png",
       "React Move": "https://github.com/sghall/react-move/raw/master/logo.png",
       "React Motion": "https://github.com/chenglou/react-motion/raw/master/logo.png",
-      "React Spring": "https://www.react-spring.io/favicon.ico",
+     
       "React Use Gesture": "https://github.com/pmndrs/react-use-gesture/raw/master/logo.png",
       "React Use Measure": "https://github.com/pmndrs/react-use-measure/raw/master/logo.png",
       "React Resize Detector": "https://github.com/maslianok/react-resize-detector/raw/master/logo.png",

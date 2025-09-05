@@ -340,8 +340,6 @@ export default function WorksPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   )
 }

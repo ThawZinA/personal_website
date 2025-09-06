@@ -33,7 +33,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "form-builder",
-    title: "Form Builder",
+    title: "BuildAForm",
     description: "Drag-and-drop form builder with real-time preview",
     longDescription:
       "A comprehensive form builder application that allows users to create complex forms through an intuitive drag-and-drop interface. Features real-time preview, advanced validation, and multiple export options including HTML, React components, and JSON schemas.",
@@ -144,8 +144,64 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "mdx-blog",
-    title: "MDX Blog Platform",
+    id: "collaborative-whiteboard",
+    title: "KollaBoard",
+    description: "Drag-and-drop form builder with real-time preview",
+    longDescription:
+      "A comprehensive form builder application that allows users to create complex forms through an intuitive drag-and-drop interface. Features real-time preview, advanced validation, and multiple export options including HTML, React components, and JSON schemas.",
+    image: "/images/form-builder-preview.png",
+    tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    category: "Web Application",
+    liveUrl: "https://v0-form-builder-ten-nu.vercel.app/",
+    githubUrl: "https://github.com/thawzinag/form-builder",
+    featured: true,
+    completedAt: "2024-12-15",
+    client: "Personal Project",
+    duration: "3 months",
+    role: "Full Stack Developer & UI/UX Designer",
+    features: [
+      "Drag-and-drop form builder interface",
+      "Real-time form preview and validation",
+      "Multiple input types (text, email, select, checkbox, radio, etc.)",
+      "Custom validation rules and error messages",
+      "Form styling and theming options",
+      "Export to HTML, React, and JSON formats",
+      "Template library with pre-built form layouts",
+      "Form analytics and submission tracking",
+      "Responsive design for all devices",
+      "Dark mode support",
+    ],
+    challenges: [
+      "Implementing complex drag-and-drop functionality with proper state management",
+      "Creating a flexible validation system that works with dynamic form structures",
+      "Ensuring real-time synchronization between builder and preview modes",
+      "Optimizing performance for large forms with many components",
+      "Building a robust export system that generates clean, production-ready code",
+    ],
+    solutions: [
+      "Used React DnD library with custom hooks for smooth drag-and-drop experience",
+      "Implemented a schema-based validation system using Zod for type safety",
+      "Created a centralized state management system using Zustand for real-time updates",
+      "Applied virtualization techniques for handling large forms efficiently",
+      "Built a template engine that generates optimized code with proper formatting",
+    ],
+    technologies: {
+      frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "React Hook Form", "Zod"],
+      backend: ["Next.js API Routes", "Node.js"],
+      database: ["Local Storage", "IndexedDB"],
+      tools: ["Vercel", "ESLint", "Prettier", "Figma"],
+    },
+    testimonial: {
+      content:
+        "This form builder has revolutionized how we create forms for our clients. The intuitive interface and powerful features make it incredibly easy to build complex forms in minutes.",
+      author: "Sarah Johnson",
+      position: "Product Manager",
+      company: "TechCorp Solutions",
+    },
+  },
+  {
+    id: "blog-platform",
+    title: "Byte Size Blog",
     description: "Modern blog platform with MDX support",
     longDescription:
       "A feature-rich blog platform built with Next.js and MDX, offering a seamless writing experience with support for interactive components, syntax highlighting, and SEO optimization.",

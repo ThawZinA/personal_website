@@ -74,7 +74,7 @@ export default function WorksPage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                My <span className="text-[#7391c8]">Works</span>
+                My <span className="text-primary">Works</span>
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
                 A collection of projects I've worked on, ranging from web applications to mobile apps and everything in
@@ -82,7 +82,7 @@ export default function WorksPage() {
               </p>
               <div className="flex items-center justify-center gap-8 text-sm text-gray-500 dark:text-gray-400">
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-[#7391c8] rounded-full"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
                   <span>{projects.length} Projects</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -111,7 +111,7 @@ export default function WorksPage() {
                   placeholder="Search projects..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 border-gray-300 dark:border-gray-600 focus:border-[#7391c8] dark:focus:border-[#7391c8]"
+                  className="pl-10 border-gray-300 dark:border-gray-600 focus:border-primary dark:focus:border-primary"
                 />
               </div>
 
@@ -122,7 +122,7 @@ export default function WorksPage() {
                   <span>Filter by:</span>
                 </div>
                 <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger className="w-48 border-gray-300 dark:border-gray-600 focus:border-[#7391c8] dark:focus:border-[#7391c8]">
+                  <SelectTrigger className="w-48 border-gray-300 dark:border-gray-600 focus:border-primary dark:focus:border-primary">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -173,7 +173,7 @@ export default function WorksPage() {
                     >
                       <Link href={`/works/${project.id}`}>
                         <Card
-                          className="group cursor-pointer bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 hover:border-[#7391c8] dark:hover:border-[#7391c8] transition-all duration-300 hover:shadow-xl hover:-translate-y-2 h-full"
+                          className="group cursor-pointer bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-2 h-full"
                           onMouseEnter={playHover}
                           onClick={playClick}
                         >
@@ -189,7 +189,7 @@ export default function WorksPage() {
                               <div className="flex items-center justify-between mb-3">
                                 <Badge
                                   variant="secondary"
-                                  className="bg-[#7391c8]/10 text-[#7391c8] border border-[#7391c8]/20"
+                                  className="bg-primary/10 text-primary border border-primary/20"
                                 >
                                   {project.category}
                                 </Badge>
@@ -199,7 +199,7 @@ export default function WorksPage() {
                                 </div>
                               </div>
 
-                              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#7391c8] transition-colors">
+                              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
                                 {project.title}
                               </h3>
 
@@ -286,7 +286,7 @@ export default function WorksPage() {
                       playClick()
                     }}
                     onMouseEnter={playHover}
-                    className="border-[#7391c8] text-[#7391c8] hover:bg-[#7391c8] hover:text-white"
+                    className="border-primary text-primary hover:bg-primary hover:text-white"
                   >
                     Clear Filters
                   </Button>
@@ -317,7 +317,7 @@ export default function WorksPage() {
                 <Link href="/contact">
                   <Button
                     size="lg"
-                    className="bg-[#7391c8] hover:bg-[#5f7ab8] text-white px-8"
+                    className="bg-primary hover:bg-[#5f7ab8] text-white px-8"
                     onMouseEnter={playHover}
                     onClick={playClick}
                   >
@@ -328,7 +328,7 @@ export default function WorksPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-[#7391c8] text-[#7391c8] hover:bg-[#7391c8] hover:text-white px-8 bg-transparent"
+                    className="border-primary text-primary hover:bg-primary hover:text-white px-8 bg-transparent"
                     onMouseEnter={playHover}
                     onClick={playClick}
                   >

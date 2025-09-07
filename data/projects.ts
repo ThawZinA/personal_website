@@ -205,7 +205,7 @@ export const projects: Project[] = [
     description: "Modern blog platform with MDX support",
     longDescription:
       "A feature-rich blog platform built with Next.js and MDX, offering a seamless writing experience with support for interactive components, syntax highlighting, and SEO optimization.",
-    image: "/images/mdx-blog-preview.png",
+    image: "/images/bytesizeblog-preview.png",
 
     tags: ["Next.js", "MDX", "TypeScript", "Tailwind CSS", "Contentlayer"],
     category: "Blog Platform",

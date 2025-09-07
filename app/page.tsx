@@ -6,7 +6,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, ExternalLink, Github } from "lucide-react"
+import { GitHubLogoIcon, LinkedInLogoIcon, InstagramLogoIcon, ArrowRightIcon, SunIcon, MoonIcon } from "@radix-ui/react-icons"
 import { LazyImage } from "../components/lazy-image"
 import { Navigation } from "../components/navigation"
 import { useSoundEffects } from "../hooks/useSoundEffects"
@@ -18,8 +18,20 @@ import Image from "next/image"
 export default function HomePage() {
   const [isSoundEnabled, setIsSoundEnabled] = useState(true)
   const { playHover, playClick } = useSoundEffects(isSoundEnabled)
-
+  
   const featuredProjects = getFeaturedProjects()
+  const [isDarkMode, setIsDarkMode] = useState(false)
+
+  useEffect(() => {
+    // Listen for theme changes
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains("dark"))
+    }
+    checkDarkMode()
+    const observer = new MutationObserver(checkDarkMode)
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] })
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     const savedSound = localStorage.getItem("soundEnabled")
@@ -65,7 +77,7 @@ export default function HomePage() {
                                         className={`hover:scale-110`}
                                         aria-label={social.label}
                                       >
-                                        <social.icon className={`w-5 h-5 ${social.color}`} />
+                                        <social.icon className={`w-4 h-4 ${social.color}`} />
                                       </Link>
                                     ))}
                   </motion.div>
@@ -112,7 +124,7 @@ export default function HomePage() {
                       onClick={playClick}
                     >
                       View My Work
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRightIcon className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
                 </motion.div>
@@ -129,7 +141,7 @@ export default function HomePage() {
                   <LazyImage
                     src="/images/hero.png"
                     alt="Thaw Zin Aung - Web Designer & Developer"
-                    className="max-w-[320px] h-auto rounded-2xl"
+                    className="max-w-[320px] h-auto"
                   />
                 </div>
                 <motion.div
@@ -150,7 +162,7 @@ export default function HomePage() {
         </section>
 
         {/* Skills Section */}
-        <section className="py-20 dark:bg-gray-800/50">
+        <section className="py-12 dark:bg-gray-800/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               className="mb-16"
@@ -159,14 +171,16 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative">
+              
+             
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative"> {isDarkMode ? <MoonIcon className="inline-block text-sky-300"  width="18" height="18"/> : <SunIcon className="inline-block text-yellow-400" width="18" height="18" />}{" "}
                 Skills & <span className="text-[#7391c8]">Expertise</span>
                 <motion.div
-                        className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800 dark:bg-white-900 rounded-full"
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 1 }}
-                        transition={{ delay: 0.8, duration: 0.6 }}
-                      />
+                  className="absolute bg-[#7391c8] -bottom-2 left-0 right-0 h-[2px] rounded-full"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 0.8, duration: 0.6 }}
+                 />
               </h2>
               <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl text-justify">
                 Aside from courses included in my degree, I've taken <span className="font-semibold">Joy Of React </span>,<span className="font-semibold">Meta Front-End Developer Professional Certificate</span>, <span className="font-semibold">Google UX Design Professional Certificate</span> to enhance my skills.
@@ -208,7 +222,7 @@ export default function HomePage() {
         </section>
 
         {/* Featured Works Section */}
-        <section className="py-20 dark:bg-gray-900">
+        <section className="py-12 dark:bg-gray-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               className="mb-16"
@@ -220,19 +234,18 @@ export default function HomePage() {
               <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative">
                 Featured <span className="text-[#7391c8]">Works</span>
                 <motion.div
-                        className="absolute bg-[#7391c8] -bottom-2 left-0 right-0 h-[2px] rounded-full"
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 1 }}
-                        transition={{ delay: 0.8, duration: 0.6 }}
-                      />
+                  className="absolute bg-[#7391c8] -bottom-2 left-0 right-0 h-[2px] rounded-full"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 0.8, duration: 0.6 }}
+                 />
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Here are some of my recent projects that showcase my skills and passion for creating exceptional digital
-                experiences.
+              <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl">
+                I'd like to stay busy and keep learning, or working on something new. Here are some of my recent works.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
               {featuredProjects.slice(0, 3).map((project, index) => (
                 <motion.div
                   key={project.id}
@@ -243,12 +256,12 @@ export default function HomePage() {
                 >
                   <Link href={`/works/${project.id}`}>
                     <Card
-                      className="group cursor-pointer bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-[#7391c8] dark:hover:border-[#7391c8] transition-all duration-300 hover:shadow-xl hover:-translate-y-2 h-full"
+                      className="group cursor-pointer bg-white dark:bg-gray-800 transition-all duration-300  hover:-translate-y-2 h-full"
                       onMouseEnter={playHover}
                       onClick={playClick}
                     >
                       <CardContent className="p-0 h-full flex flex-col">
-                        <div className="aspect-video overflow-hidden rounded-t-lg">
+                        <div className="aspect-video overflow-hidden rounded-t-sm">
                           <LazyImage
                             src={project.image}
                             alt={`${project.title} preview`}
@@ -256,21 +269,6 @@ export default function HomePage() {
                           />
                         </div>
                         <div className="p-6 flex-1 flex flex-col">
-                          <div className="flex items-center justify-between mb-3">
-                            <Badge
-                              variant="secondary"
-                              className="bg-[#7391c8]/10 text-[#7391c8] border border-[#7391c8]/20"
-                            >
-                              {project.category}
-                            </Badge>
-                            <Badge
-                              variant="secondary"
-                              className="text-xs bg-yellow-100 text-yellow-800 border-yellow-200"
-                            >
-                              Featured
-                            </Badge>
-                          </div>
-
                           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#7391c8] transition-colors">
                             {project.title}
                           </h3>
@@ -278,35 +276,17 @@ export default function HomePage() {
                           <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2 flex-1">
                             {project.description}
                           </p>
-
-                          <div className="flex flex-wrap gap-2 mb-4">
-                            {project.tags.slice(0, 3).map((tag) => (
-                              <Badge
-                                key={tag}
-                                variant="outline"
-                                className="text-xs border-gray-300 dark:border-gray-600"
-                              >
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
-
-                          <div className="flex items-center justify-between pt-2 border-t border-gray-200 dark:border-gray-700">
-                            <div className="flex gap-2">
-                              {project.liveUrl && (
-                                <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
-                                  <ExternalLink className="w-3 h-3" />
-                                  <span>Live</span>
-                                </div>
-                              )}
-                              {project.githubUrl && (
-                                <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
-                                  <Github className="w-3 h-3" />
-                                  <span>Code</span>
-                                </div>
-                              )}
-                            </div>
-                          </div>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="border-[#7391c8] text-[#7391c8] hover:bg-[#7391c8] hover:text-white"
+                              onMouseEnter={playHover}
+                              onClick={playClick}
+                            >
+                              View Project
+                              <ArrowRightIcon className="ml-2 w-4 h-4" />
+                            </Button>
+                          
                         </div>
                       </CardContent>
                     </Card>
@@ -331,7 +311,7 @@ export default function HomePage() {
                   onClick={playClick}
                 >
                   View All Projects
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRightIcon className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </motion.div>
@@ -339,7 +319,7 @@ export default function HomePage() {
         </section>
       
       {/* Contact Section */}
-      <section className="py-20 dark:bg-gray-800/50">
+      <section className="py-12 dark:bg-gray-800/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               className="mb-16"
@@ -375,18 +355,24 @@ export default function HomePage() {
                   thawzinag419@gmail.com
                 </Link>
                 <p className="text-base text-gray-600 dark:text-gray-400 my-6">Aside from github and linkedin, you can find more side of me on instagram.</p>
-                <div className="flex justify-center gap-6">
-                  {socialLinks.map((social) => (
+                 <motion.div
+                    className="flex max-w-[60%] justify-between items-center bg-accent/30 rounded"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.6 }}
+                  > 
+                    <span className="text-bold">___________________</span>
+                    {socialLinks.map((social) => (
                                       <Link
                                         href={social.href}
                                         key={social.label}
                                         className={`hover:scale-110`}
                                         aria-label={social.label}
                                       >
-                                        <social.icon className={`w-5 h-5 ${social.color}`} />
+                                        <social.icon className={`w-4 h-4 ${social.color}`} />
                                       </Link>
                                     ))}
-                </div>
+                  </motion.div>
               </motion.div>
               {/* Masonry photo grid in the last column */}
               <motion.div
@@ -396,7 +382,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-              <Image src="/images/masonary_3.jpg" alt="Photo 3" className="rounded-lg object-cover  col-span-2 row-span-1 w-[100%] h-[200px]" width={200} height={180}  />
+              <Image src="/images/masonary_3.jpg" alt="Photo 3" className="object-cover  col-span-2 row-span-1 w-[100%] h-[200px]" width={200} height={180}  />
  
               </motion.div>
               

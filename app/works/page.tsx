@@ -11,7 +11,6 @@ import { Search, Filter, ExternalLink, Github, Calendar, User } from "lucide-rea
 import Link from "next/link"
 import { LazyImage } from "../../components/lazy-image"
 import { Navigation } from "../../components/navigation"
-import { Footer } from "../../components/footer"
 import { useSoundEffects } from "../../hooks/useSoundEffects"
 import { projects, getAllCategories } from "../../data/projects"
 

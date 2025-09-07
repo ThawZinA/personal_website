@@ -9,10 +9,11 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight, ExternalLink, Github } from "lucide-react"
 import { LazyImage } from "../components/lazy-image"
 import { Navigation } from "../components/navigation"
-import { Footer } from "../components/footer"
 import { useSoundEffects } from "../hooks/useSoundEffects"
 import { getFeaturedProjects } from "../data/projects"
-import { contactMethods, skills, socialLinks } from "@/data/constants"
+import { skills, socialLinks } from "@/data/constants"
+import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 export default function HomePage() {
   const [isSoundEnabled, setIsSoundEnabled] = useState(true)
@@ -51,27 +52,21 @@ export default function HomePage() {
               >
                 <div className="space-y-4 pt-4">
                   <motion.div
-                    className="flex max-w-[60%] justify-between items-center bg-[#7391c8]/30rounded"
+                    className="flex max-w-[60%] justify-between items-center bg-accent/30 rounded"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
                   > 
                     <span className="text-bold">___________________</span>
                     {socialLinks.map((social) => (
-                                      <Button
+                                      <Link
+                                        href={social.href}
                                         key={social.label}
-                                        variant="ghost"
-                                        size="sm"
-                                        className={`text-gray-600 dark:text-gray-400 ${social.color} transition-colors`}
-                                        onClick={() => {
-                                          playClick()
-                                          window.open(social.href, "_blank")
-                                        }}
-                                        onMouseEnter={playHover}
+                                        className={`hover:scale-110`}
                                         aria-label={social.label}
                                       >
-                                        <social.icon className="w-5 h-5" />
-                                      </Button>
+                                        <social.icon className={`w-5 h-5 ${social.color}`} />
+                                      </Link>
                                     ))}
                   </motion.div>
 
@@ -225,7 +220,7 @@ export default function HomePage() {
               <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative">
                 Featured <span className="text-[#7391c8]">Works</span>
                 <motion.div
-                        className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800 dark:bg-white-900 rounded-full"
+                        className="absolute bg-[#7391c8] -bottom-2 left-0 right-0 h-[2px] rounded-full"
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
                         transition={{ delay: 0.8, duration: 0.6 }}
@@ -356,7 +351,7 @@ export default function HomePage() {
               <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative">
                 Let's <span className="text-[#7391c8]">Build</span> Something Together
                 <motion.div
-                        className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800 dark:bg-white-900 rounded-full"
+                        className="absolute bg-[#7391c8] -bottom-2 left-0 right-0 h-[2px] rounded-full"
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
                         transition={{ delay: 0.8, duration: 0.6 }}
@@ -365,7 +360,7 @@ export default function HomePage() {
               
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
               <motion.div
                 className="col-span-1"
                 initial={{ opacity: 0, y: 20 }}
@@ -376,42 +371,33 @@ export default function HomePage() {
                 <p className="text-base text-gray-600 dark:text-gray-400">
                   Feel free to reach out if you are looking for a developer, have a question or just want to connect. I'm always happy for new opportunities, collaborations, and friends.
                 </p>
-                <Link type="email" href="mailto:thawzinag419@gmail.com" className="font-bold">
+                <Link type="email" href="mailto:thawzinag419@gmail.com" className="font-bold text-[#7391c8] hover:underline transition-all">
                   thawzinag419@gmail.com
                 </Link>
-                <h3 className="text-xl text-gray-900 dark:text-white mb-6">Aside from github and linkedin, you can find more side of me on instagram.</h3>
+                <p className="text-base text-gray-600 dark:text-gray-400 my-6">Aside from github and linkedin, you can find more side of me on instagram.</p>
                 <div className="flex justify-center gap-6">
                   {socialLinks.map((social) => (
-                    <Button
-                      key={social.label}
-                      variant="ghost"
-                      size="sm"
-                      className={`text-gray-600 dark:text-gray-400 ${social.color} transition-colors`}
-                      onClick={() => {
-                        playClick()
-                        window.open(social.href, "_blank")
-                      }}
-                      onMouseEnter={playHover}
-                      aria-label={social.label}
-                    >
-                      <social.icon className="w-5 h-5" />
-                    </Button>
-                  ))}
+                                      <Link
+                                        href={social.href}
+                                        key={social.label}
+                                        className={`hover:scale-110`}
+                                        aria-label={social.label}
+                                      >
+                                        <social.icon className={`w-5 h-5 ${social.color}`} />
+                                      </Link>
+                                    ))}
                 </div>
               </motion.div>
               {/* Masonry photo grid in the last column */}
               <motion.div
-                className="col-span-2 hidden md:block"
+                className="col-span-1 hidden md:block"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="grid grid-cols-3 grid-rows-2 gap-1 h-full">
-                  <img src="/images/masonary_1.jpg" alt="Photo 1" className="rounded-lg object-cover  col-span-1 row-span-2 h-[400px]" />
-                  <img src="/images/masonary_2.jpg" alt="Photo 2" className="rounded-lg object-cover  col-span-2 row-span-1 w-[100%] h-[200px]" />
-                  <img src="/images/masonary_3.jpg" alt="Photo 3" className="rounded-lg object-cover  col-span-2 row-span-1 w-[100%] h-[200px]" />
-                </div>
+              <Image src="/images/masonary_3.jpg" alt="Photo 3" className="rounded-lg object-cover  col-span-2 row-span-1 w-[100%] h-[200px]" width={200} height={180}  />
+ 
               </motion.div>
               
             </div>

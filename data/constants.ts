@@ -39,19 +39,19 @@ export const timeline = [
       icon: GitHubLogoIcon,
       label: "GitHub",
       href: "https://github.com/ThawZinA",
-      color: "hover:text-gray-900 dark:hover:text-white hover:scale-110",
+      color: "text-amber-400",
     },
     {
       icon: LinkedInLogoIcon,
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/thaw-zin-ag419/",
-      color: "hover:text-blue-600 dark:hover:text-blue-500 hover:scale-110",
+      color: "text-blue-600",
     },
     {
       icon: InstagramLogoIcon,
       label: "Instagram",
       href: "https://www.instagram.com/__thaw_/",
-      color: "hover:text-pink-500 dark:hover:text-pink-400 hover:scale-110",
+      color: "text-pink-300",
     }
   ]
 

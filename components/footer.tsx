@@ -15,8 +15,8 @@ export function Footer() {
           viewport={{ once: true }}
         >
           <p className="text-sm text-gray-600/60 dark:text-gray-400 flex items-center justify-center gap-2">
-            &copy; {new Date().getFullYear()}. All rights reserved. Made with{" "}
-            <Heart className="w-4 h-4 text-[#5f7ab8] animate-pulse" /> by Thaw Zin Aung.
+            &copy; {new Date().getFullYear()}. All rights reserved. Thaw Zin Aung {" "}
+            <Heart className="w-4 h-4 text-[#5f7ab8] animate-pulse" />
           </p>
         </motion.div>
       </div>

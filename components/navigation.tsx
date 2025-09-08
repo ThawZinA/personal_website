@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Sun, Moon } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LazyImage } from "./lazy-image"
 import { SoundButton } from "./sound-button"
 import { useSoundEffects } from "../hooks/useSoundEffects"
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 
 interface NavigationProps {
   isSoundEnabled: boolean
@@ -46,7 +46,7 @@ export function Navigation({ isSoundEnabled, onToggleSound }: NavigationProps) {
 
   const navItems = [
     { id: "home", label: "HOME", href: "/" },
-     { id: "works", label: "WORKS", href: "/works" },
+    // { id: "works", label: "WORKS", href: "/works" },
     { id: "about", label: "ABOUT", href: "/about" },
    
   ]
@@ -128,7 +128,7 @@ export function Navigation({ isSoundEnabled, onToggleSound }: NavigationProps) {
               onMouseEnter={playHover}
               aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
             >
-              {isDarkMode ? <Sun className="w-4 h-4 text-yellow-500" /> : <Moon className="w-4 h-4 text-gray-600" />}
+              {isDarkMode ? <SunIcon className="w-4 h-4 text-yellow-500" /> : <MoonIcon className="w-4 h-4 text-gray-600" />}
             </motion.button>
 
             {/* Mobile Menu Button */}

@@ -15,7 +15,8 @@ export interface Project {
   role: string
   features: string[]
   challenges: string[]
-  solutions: string[]
+  solutions: string[],
+  technicalDetails?: string
   technologies: {
     frontend: string[]
     backend: string[]
@@ -28,6 +29,7 @@ export interface Project {
     position: string
     company: string
   }
+  lessonsLearned?: string
 }
 
 export const projects: Project[] = [
@@ -42,7 +44,7 @@ export const projects: Project[] = [
     category: "Web Application",
     liveUrl: "https://buildaform.netlify.app/",
     githubUrl: "https://github.com/thawzinag/form-builder",
-    featured: false,
+    featured: true,
     completedAt: "2024-12-15",
     client: "Personal Project",
     duration: "3 months",
@@ -79,6 +81,7 @@ export const projects: Project[] = [
       database: ["Local Storage", "IndexedDB"],
       tools: ["Vercel", "ESLint", "Prettier", "Figma"],
     },
+    technicalDetails: " React & Typescript ensures interactive UI with safety for grid configurations.CSS grid is the core concept and foundation of the layout. Tailwind CSS is used for styling. Framer Motion adds smooth animations and transitions. The combination of these technologies results in a modern, responsive, and visually appealing web application.",
     testimonial: {
       content:
         "This form builder has revolutionized how we create forms for our clients. The intuitive interface and powerful features make it incredibly easy to build complex forms in minutes.",
@@ -92,9 +95,9 @@ export const projects: Project[] = [
     title: "Gridable",
     description: "CSS Grid layout generator and learning tool",
     longDescription:
-      "An interactive CSS Grid layout generator that helps developers learn and create complex grid layouts. Features visual grid editing, code generation, and educational resources to master CSS Grid.",
+      "Gridable is an interactive CSS Grid layout generator and learning tool. It empowers developers to visually design complex grid layouts, then export them instantly as HTML, CSS code. It also serves as a teaching tool, offering real-time visualizations to help beginners understand grid concepts.",
     image: "/images/gridable-preview.png",
-    tags: ["React", "TypeScript", "CSS Grid", "Tailwind CSS", "Vite"],
+    tags: ["React", "TypeScript", "CSS Grid", "Tailwind CSS", "Framer Motion"],
     category: "Developer Tool",
     liveUrl: "https://gridable.netlify.app/",
     githubUrl: "https://github.com/thawzinag/gridable",
@@ -107,13 +110,8 @@ export const projects: Project[] = [
       "Visual CSS Grid editor with drag-and-drop interface",
       "Real-time code generation (CSS, HTML, React)",
       "Interactive grid item positioning and sizing",
-      "Pre-built layout templates and examples",
       "Grid area naming and management",
       "Responsive breakpoint support",
-      "Export functionality for multiple formats",
-      "Educational tutorials and documentation",
-      "Dark/light theme support",
-      "Keyboard shortcuts for power users",
     ],
     challenges: [
       "Creating an intuitive visual representation of CSS Grid concepts",
@@ -142,6 +140,7 @@ export const projects: Project[] = [
       position: "Frontend Developer",
       company: "StartupXYZ",
     },
+    lessonsLearned: "Building Gridable showed me how much clarity matters when teaching technical concepts. Beginners need strong visuals and small hints that guide them through without feeling lost. I learned that even advanced tools should feel approachable, like a friendly teacher rather than a complicated manual."
   },
   {
     id: "collaborative-whiteboard",
@@ -154,7 +153,7 @@ export const projects: Project[] = [
     category: "Web Application",
     liveUrl: "https://kollabboard.netlify.app/",
     githubUrl: "https://github.com/thawzinag/form-builder",
-    featured: false,
+    featured: true,
     completedAt: "2024-12-15",
     client: "Personal Project",
     duration: "3 months",
@@ -206,7 +205,6 @@ export const projects: Project[] = [
     longDescription:
       "A feature-rich blog platform built with Next.js and MDX, offering a seamless writing experience with support for interactive components, syntax highlighting, and SEO optimization.",
     image: "/images/bytesizeblog-preview.png",
-
     tags: ["Next.js", "MDX", "TypeScript", "Tailwind CSS", "Contentlayer"],
     category: "Blog Platform",
     liveUrl: "https://bytesizeblogs.netlify.app/",

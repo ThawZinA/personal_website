@@ -6,7 +6,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { GitHubLogoIcon, LinkedInLogoIcon, InstagramLogoIcon, ArrowRightIcon, SunIcon, MoonIcon } from "@radix-ui/react-icons"
+import { GitHubLogoIcon, LinkedInLogoIcon, InstagramLogoIcon, ArrowRightIcon, SunIcon, MoonIcon, DownloadIcon } from "@radix-ui/react-icons"
 import { LazyImage } from "../components/lazy-image"
 import { Navigation } from "../components/navigation"
 import { useSoundEffects } from "../hooks/useSoundEffects"
@@ -64,7 +64,7 @@ export default function HomePage() {
               >
                 <div className="space-y-4 pt-4">
                   <motion.div
-                    className="flex max-w-[60%] justify-between items-center bg-accent/30 rounded"
+                    className="flex max-w-[60%] justify-between items-center rounded"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
@@ -116,17 +116,18 @@ export default function HomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.6 }}
                 >
-                  <Link href="/works">
-                    <Button
-                      size="lg"
-                      className="bg-[#7391c8] hover:bg-[#5f7ab8] text-white px-8 group"
-                      onMouseEnter={playHover}
-                      onClick={playClick}
-                    >
-                      View My Work
-                      <ArrowRightIcon className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
+                  <Button
+                    size="lg"
+                    className="bg-[#7391c8] hover:bg-[#5f7ab8] text-white px-8"
+                    onMouseEnter={playHover}
+                    onClick={() => {
+                      playClick()
+                      window.open("/thawzinag_cv.pdf", "_blank")
+                    }}
+                  >
+                    <DownloadIcon className="mr-2 w-4 h-4" />
+                    Download CV
+                  </Button>
                 </motion.div>
               </motion.div>
 
@@ -170,11 +171,9 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-            >
-              
-             
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative"> {isDarkMode ? <MoonIcon className="inline-block text-sky-300"  width="18" height="18"/> : <SunIcon className="inline-block text-yellow-400" width="18" height="18" />}{" "}
-                Skills & <span className="text-[#7391c8]">Expertise</span>
+            >  
+              <h2 className="text-xl flex items-center md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative"> {isDarkMode ? <MoonIcon className="block mr-2 text-sky-300"  width="20" height="20"/> : <SunIcon className="block mr-2 text-yellow-400" width="20" height="20" />}{" "}
+                Skills & <span className="text-[#7391c8] ml-2">Expertise</span>
                 <motion.div
                   className="absolute bg-[#7391c8] -bottom-2 left-0 right-0 h-[2px] rounded-full"
                   initial={{ scaleX: 0 }}
@@ -231,8 +230,9 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative">
-                Featured <span className="text-[#7391c8]">Works</span>
+              <h2 className="text-xl flex items-center md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative">
+                {isDarkMode ? <MoonIcon className="block mr-2 text-sky-300"  width="20" height="20"/> : <SunIcon className="block mr-2 text-yellow-400" width="20" height="20" />}{" "}
+                Featured <span className="text-[#7391c8] ml-2">Works</span>
                 <motion.div
                   className="absolute bg-[#7391c8] -bottom-2 left-0 right-0 h-[2px] rounded-full"
                   initial={{ scaleX: 0 }}
@@ -246,7 +246,7 @@ export default function HomePage() {
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              {featuredProjects.slice(0, 3).map((project, index) => (
+              {featuredProjects.slice(0, 4).map((project, index) => (
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -295,7 +295,7 @@ export default function HomePage() {
               ))}
             </div>
 
-            <motion.div
+            {/* <motion.div
               className="text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -314,7 +314,7 @@ export default function HomePage() {
                   <ArrowRightIcon className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-            </motion.div>
+            </motion.div> */}
           </div>
         </section>
       
@@ -328,8 +328,9 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative">
-                Let's <span className="text-[#7391c8]">Build</span> Something Together
+              <h2 className="text-xl flex items-center md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative">
+                {isDarkMode ? <MoonIcon className="block mr-2 text-sky-300"  width="20" height="20"/> : <SunIcon className="block mr-2 text-yellow-400" width="20" height="20" />}{" "}
+                Let's <span className="text-[#7391c8] mx-2">Build</span> Something Together
                 <motion.div
                         className="absolute bg-[#7391c8] -bottom-2 left-0 right-0 h-[2px] rounded-full"
                         initial={{ scaleX: 0 }}
@@ -356,7 +357,7 @@ export default function HomePage() {
                 </Link>
                 <p className="text-base text-gray-600 dark:text-gray-400 my-6">Aside from github and linkedin, you can find more side of me on instagram.</p>
                  <motion.div
-                    className="flex max-w-[60%] justify-between items-center bg-accent/30 rounded"
+                    className="flex max-w-[60%] justify-between items-center rounded"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}

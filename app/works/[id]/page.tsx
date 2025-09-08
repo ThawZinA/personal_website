@@ -11,6 +11,7 @@ import { useSoundEffects } from "../../../hooks/useSoundEffects"
 import { SoundButton } from "../../../components/sound-button"
 import { projects } from "../../../data/projects"
 import { notFound } from "next/navigation"
+import { ExternalLinkIcon, GitHubLogoIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
 
 interface ProjectPageProps {
   params: {
@@ -71,7 +72,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const navItems = [
     { id: "home", label: "HOME", href: "/" },
     { id: "about", label: "ABOUT", href: "/about" },
-    { id: "works", label: "WORKS", href: "/works" },
+    // { id: "works", label: "WORKS", href: "/works" },
   ]
 
   if (!project) {
@@ -206,7 +207,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 onMouseEnter={playHover}
                 aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
               >
-                {isDarkMode ? <Sun className="w-4 h-4 text-yellow-500" /> : <Moon className="w-4 h-4 text-gray-600" />}
+                {isDarkMode ? <SunIcon className="w-4 h-4 text-yellow-500" /> : <MoonIcon className="w-4 h-4 text-gray-600" />}
               </motion.button>
 
               {/* Mobile Menu Button */}
@@ -271,7 +272,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Link href="/works">
+            <Link href="/">
               <Button
                 variant="ghost"
                 className="text-gray-600 dark:text-gray-400 hover:text-[#7391c8] p-0"
@@ -279,7 +280,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 onClick={playClick}
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Works
+                Back to Home
               </Button>
             </Link>
           </motion.div>
@@ -291,18 +292,15 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">{project.title}</h1>
+            <h1 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">{project.title}</h1>
 
             <div className="prose prose-lg max-w-none text-gray-600 dark:text-gray-400 mb-8">
-              <p className="text-xl leading-relaxed">{project.description}</p>
+              <p className="text-sm text-justify leading-relaxed">{project.longDescription}</p>
             </div>
 
             {/* Project Meta */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
-              <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Timeline</h3>
-                <p className="text-gray-600 dark:text-gray-400">{project.completedAt}</p>
-              </div>
+              
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Category</h3>
                 <p className="text-gray-600 dark:text-gray-400">{project.category}</p>
@@ -326,7 +324,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                       className="bg-[#7391c8] hover:bg-[#5f7ab8] text-white h-8 px-3 text-xs"
                       onMouseEnter={playHover}
                     >
-                      <ExternalLink className="w-3 h-3 mr-1" />
+                      <ExternalLinkIcon className="w-3 h-3 mr-1" />
                       Live Site
                     </Button>
                   )}
@@ -341,7 +339,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                       className="h-8 px-3 text-xs border-gray-300 dark:border-gray-600"
                       onMouseEnter={playHover}
                     >
-                      <Github className="w-3 h-3 mr-1" />
+                      <GitHubLogoIcon className="w-3 h-3 mr-1" />
                       Code
                     </Button>
                   )}
@@ -371,10 +369,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Tech Stack</h2>
-              <div className="prose prose-lg max-w-none text-gray-600 dark:text-gray-400 mb-6">
-                <p className="leading-relaxed">
-                  This project leveraged modern web technologies to create a robust and scalable solution. The tech
-                  stack was carefully chosen to balance performance, developer experience, and maintainability.
+              <div className="max-w-none text-gray-600 dark:text-gray-400 mb-6">
+                <p className="text-sm text-justify leading-relaxed">
+                  {project.technicalDetails}
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -411,7 +408,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 {project.features.map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-[#7391c8] rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{feature}</p>
+                    <p className="text-gray-600 text-sm dark:text-gray-400 leading-relaxed">{feature}</p>
                   </div>
                 ))}
               </div>
@@ -430,7 +427,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               <div className="space-y-4">
                 {project.challenges.map((challenge, index) => (
                   <div key={index} className="prose prose-lg max-w-none text-gray-600 dark:text-gray-400">
-                    <p className="leading-relaxed">{challenge}</p>
+                    <p className="text-sm text-justify leading-relaxed">{challenge}</p>
                   </div>
                 ))}
               </div>
@@ -449,7 +446,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               <div className="space-y-4">
                 {project.solutions.map((solution, index) => (
                   <div key={index} className="prose prose-lg max-w-none text-gray-600 dark:text-gray-400">
-                    <p className="leading-relaxed">{solution}</p>
+                    <p className="text-sm text-justify leading-relaxed">{solution}</p>
                   </div>
                 ))}
               </div>
@@ -465,11 +462,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           >
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Lessons Learned</h2>
             <div className="prose prose-lg max-w-none text-gray-600 dark:text-gray-400">
-              <p className="leading-relaxed">
-                Every project brings valuable insights and learning opportunities. This project reinforced the
-                importance of user-centered design, iterative development, and the power of modern web technologies in
-                creating engaging digital experiences. The challenges faced during development led to creative solutions
-                and a deeper understanding of the problem domain.
+              <p className="text-sm text-justify leading-relaxed">
+                {project.lessonsLearned}
               </p>
             </div>
           </motion.section>
@@ -504,28 +498,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               </div>
             </motion.section>
           )}
-
-          {/* Call to Action */}
-          <motion.section
-            className="text-center py-16 border-t border-gray-200 dark:border-gray-700"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-          >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Let's Build Something Together</h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-              Interested in working together? I'm always open to discussing new opportunities and creative challenges.
-            </p>
-            <Link href="/#contact">
-              <Button
-                className="bg-[#7391c8] hover:bg-[#5f7ab8] text-white px-8 py-3 text-lg"
-                onMouseEnter={playHover}
-                onClick={playClick}
-              >
-                Get In Touch
-              </Button>
-            </Link>
-          </motion.section>
         </article>
       </main>
     </div>

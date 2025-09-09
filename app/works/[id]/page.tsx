@@ -469,7 +469,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           </motion.section>
 
           {/* Other Projects */}
-          {otherProjects.length > 0 && (
+          {/* {otherProjects.length > 0 && (
             <motion.section
               className="mb-20"
               initial={{ opacity: 0, y: 20 }}
@@ -497,7 +497,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 ))}
               </div>
             </motion.section>
-          )}
+          )} */}
         </article>
       </main>
     </div>

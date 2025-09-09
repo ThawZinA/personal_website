@@ -10,27 +10,27 @@ export const skills = {
 export const timeline = [
     {
       year: "2024",
-      title: "Senior Full Stack Developer",
-      company: "Freelance",
-      description: "Leading complex web development projects and mentoring junior developers.",
+      title: "MSc Business Information Systems Management",
+      company: "Middlesex University",
+      description: "Graduated with Merit for MSc BISM from Middlesex University.",
     },
     {
       year: "2023",
-      title: "Full Stack Developer",
-      company: "Tech Solutions Inc.",
+      title: "Wed Developer",
+      company: "Grace Souvenirs Myanmar.",
       description: "Developed scalable web applications using modern technologies and best practices.",
     },
     {
-      year: "2022",
-      title: "Frontend Developer",
-      company: "Digital Agency",
+      year: "2019",
+      title: "Web Designer",
+      company: "JarPlay Agency",
       description: "Created responsive and interactive user interfaces for various client projects.",
     },
     {
-      year: "2021",
-      title: "Junior Web Developer",
-      company: "StartupXYZ",
-      description: "Started my professional journey building websites and learning industry standards.",
+      year: "2019",
+      title: "BSc Business Information Technology",
+      company: "University of Greenwich",
+      description: "Graduated with 2:1 for BSc BIT from University of Greenwich.",
     },
   ]
 

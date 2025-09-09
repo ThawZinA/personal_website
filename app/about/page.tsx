@@ -36,7 +36,7 @@ export default function AboutPage() {
 
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+        <section className="py-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -47,7 +47,7 @@ export default function AboutPage() {
               >
                 <div className="space-y-4">
                   <motion.h1
-                    className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight"
+                    className="text-xl md:text-[38px] leading-[1.6] font-bold text-gray-900 dark:text-white leading-tight"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
@@ -56,26 +56,22 @@ export default function AboutPage() {
                   </motion.h1>
 
                   <motion.p
-                    className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
+                    className="text-base text-justify text-gray-600 dark:text-gray-400 leading-relaxed"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.6 }}
                   >
-                    I'm a passionate web designer and developer with over 3 years of experience creating digital
-                    experiences that make a difference. I believe in the power of clean code, beautiful design, and
-                    user-centered thinking.
+                    An introvert and a minimalist who just happened to fall in love with web design and frontend development. Initially a medical student, I started my journey into IT in 2015.
                   </motion.p>
-
                   <motion.p
-                    className="text-gray-600 dark:text-gray-400 leading-relaxed"
+                    className="text-base text-justify text-gray-600 dark:text-gray-400 leading-relaxed"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.6 }}
+                    transition={{ delay: 0.3, duration: 0.6 }}
                   >
-                    When I'm not coding, you'll find me exploring new technologies, contributing to open-source
-                    projects, or enjoying a good cup of coffee while sketching new ideas. I'm always eager to learn and
-                    take on new challenges.
+                    I started designing and building websites in 2016. I never stoped learning how to make clean, responsive and user-friendly digital experience. I believe in the power of clean code, beautiful design, and user-centered thinking.
                   </motion.p>
+                  
                 </div>
 
                 <motion.div
@@ -110,20 +106,20 @@ export default function AboutPage() {
                     <LazyImage
                       src="/images/about_web_developer.png"
                       alt="Web Developer"
-                      className="w-full rounded-lg shadow-lg"
+                      className="w-full rounded-xs shadow-sm"
                     />
                     <LazyImage
                       src="/images/about_designer.png"
                       alt="Designer"
-                      className="w-full rounded-lg shadow-lg"
+                      className="w-full rounded-xs shadow-xs"
                     />
                   </div>
                   <div className="space-y-4 pt-8">
-                    <LazyImage src="/images/about_teacher.png" alt="Teacher" className="w-full rounded-lg shadow-lg" />
+                    <LazyImage src="/images/about_teacher.png" alt="Teacher" className="w-full rounded-xs shadow-lg" />
                     <LazyImage
                       src="/images/about_cat_lover.png"
                       alt="Cat Lover"
-                      className="w-full rounded-lg shadow-lg"
+                      className="w-full rounded-sx shadow-md"
                     />
                   </div>
                 </div>
@@ -139,18 +135,22 @@ export default function AboutPage() {
         <section className="py-20 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                My <span className="text-[#7391c8]">Journey</span>
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Here's a timeline of my professional journey and the experiences that shaped me as a developer.
-              </p>
+                          className="mb-16"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6 }}
+                          viewport={{ once: true }}
+                        >
+                          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative">
+                           My <span className="text-[#7391c8] mx-2">Journey</span>
+                            <motion.div
+                                    className="absolute bg-[#7391c8] -bottom-2 left-0 right-0 h-[2px] rounded-full"
+                                    initial={{ scaleX: 0 }}
+                                    animate={{ scaleX: 1 }}
+                                    transition={{ delay: 0.8, duration: 0.6 }}
+                                  />
+                          </h2>
+                          
             </motion.div>
 
             <div className="max-w-4xl mx-auto">
@@ -183,30 +183,45 @@ export default function AboutPage() {
         </section>
 
         {/* Personal Touch Section */}
-        <section className="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <section className="py-20 dark:bg-gray-800/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              className="text-center max-w-4xl mx-auto"
+              className="max-w-4xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8">
-                Beyond the <span className="text-[#7391c8]">Code</span>
-              </h2>
+              <motion.div
+                          className="mb-16"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6 }}
+                          viewport={{ once: true }}
+                        >
+                          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 relative">
+                           Beyond the <span className="text-[#7391c8] mx-2">Code</span>
+                            <motion.div
+                                    className="absolute bg-[#7391c8] -bottom-2 left-0 right-0 h-[2px] rounded-full"
+                                    initial={{ scaleX: 0 }}
+                                    animate={{ scaleX: 1 }}
+                                    transition={{ delay: 0.8, duration: 0.6 }}
+                                  />
+                          </h2>
+                          
+            </motion.div>
               <div className="grid md:grid-cols-3 gap-8 mb-12">
-                <div className="text-center">
+                <div className="text-justify">
                   <div className="w-16 h-16 bg-[#7391c8]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Coffee className="w-8 h-8 text-[#7391c8]" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Coffee Enthusiast</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Tea Lover</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm">
                     I believe the best code is written with a perfect cup of coffee. Always exploring new brewing
                     methods and coffee shops.
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-justify">
                   <div className="w-16 h-16 bg-[#7391c8]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Heart className="w-8 h-8 text-[#7391c8]" />
                   </div>
@@ -215,7 +230,7 @@ export default function AboutPage() {
                     Proud cat parent who finds inspiration in the curiosity and independence of feline friends.
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-justify">
                   <div className="w-16 h-16 bg-[#7391c8]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Users className="w-8 h-8 text-[#7391c8]" />
                   </div>
@@ -225,11 +240,7 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                I believe that great work comes from passion, curiosity, and continuous learning. When I'm not coding,
-                I'm probably reading about the latest web technologies, experimenting with new design trends, or
-                planning my next adventure.
-              </p>
+              
             </motion.div>
           </div>
         </section>

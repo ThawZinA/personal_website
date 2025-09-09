@@ -203,41 +203,35 @@ export const projects: Project[] = [
     title: "Byte Size Blog",
     description: "Modern blog platform with MDX support",
     longDescription:
-      "A feature-rich blog platform built with Next.js and MDX, offering a seamless writing experience with support for interactive components, syntax highlighting, and SEO optimization.",
+      "A simple minimalistic blog platform built with Next.js and MDX, offering a seamless reading experience with support for interactive components, syntax highlighting, and SEO optimization. Currently intended as my personal blog but may change into a blog platform for developers.",
     image: "/images/bytesizeblog-preview.png",
-    tags: ["Next.js", "MDX", "TypeScript", "Tailwind CSS", "Contentlayer"],
+    tags: ["Next.js", "MDX", "TypeScript", "Tailwind CSS"],
     category: "Blog Platform",
     liveUrl: "https://bytesizeblogs.netlify.app/",
     githubUrl: "https://github.com/thawzinag/mdx-blog",
     featured: true,
     completedAt: "2024-07-10",
     client: "Personal Project",
-    duration: "2 months",
+    duration: "1 months",
     role: "Full Stack Developer",
     features: [
       "MDX support for interactive blog posts",
       "Syntax highlighting for code blocks",
-      "SEO optimization with meta tags",
-      "Tag-based categorization system",
-      "Search functionality",
-      "RSS feed generation",
-      "Comment system integration",
-      "Social media sharing",
-      "Reading time estimation",
-      "Related posts suggestions",
+      "Light and dark mode themes",
+      "Dynamic routing for blog posts",
+      "Responsive design for all devices",
     ],
     challenges: [
       "Implementing MDX compilation and rendering efficiently",
       "Creating a flexible component system for blog posts",
       "Optimizing SEO for dynamic content",
-      "Building a fast search functionality",
       "Ensuring accessibility across all components",
+
     ],
     solutions: [
       "Used Contentlayer for efficient MDX processing and type safety",
       "Built a component library specifically for blog content",
-      "Implemented dynamic meta tag generation with Next.js",
-      "Created a client-side search using Fuse.js for fast results",
+      "Implemented dynamic routing with Next.js",
       "Applied WCAG guidelines and tested with screen readers",
     ],
     technologies: {
@@ -246,6 +240,7 @@ export const projects: Project[] = [
       database: ["File System", "Git"],
       tools: ["Vercel", "Contentlayer", "Prism.js", "Fuse.js"],
     },
+    lessonsLearned: "Building Byte Size Blog taught me the power of MDX for creating rich, interactive content. I realized how much effeort went into adding small touches like even a  syntax highlighting. I also learned that accessibility isn’t optional — it’s what makes a platform welcoming to everyone."
   },
 ]
 

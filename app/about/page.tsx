@@ -12,6 +12,7 @@ import { Navigation } from "../../components/navigation"
 import { Footer } from "../../components/footer"
 import { useSoundEffects } from "../../hooks/useSoundEffects"
 import { timeline } from "@/data/constants"
+import { CameraIcon, CookieIcon, DrawingPinIcon, MagicWandIcon } from "@radix-ui/react-icons"
 
 export default function AboutPage() {
   const [isSoundEnabled, setIsSoundEnabled] = useState(true)
@@ -213,30 +214,29 @@ export default function AboutPage() {
               <div className="grid md:grid-cols-3 gap-8 mb-12">
                 <div className="text-justify">
                   <div className="w-16 h-16 bg-[#7391c8]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Coffee className="w-8 h-8 text-[#7391c8]" />
+                    <MagicWandIcon className="w-8 h-8 text-[#7391c8]" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Tea Lover</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 text-center">Storyphile</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    I believe the best code is written with a perfect cup of coffee. Always exploring new brewing
-                    methods and coffee shops.
+                    I enjoy storytelling, imagination, and artistic expression across movies, books, and drawing. I would spent my free time reading, sketching and visiting cinemas.
                   </p>
                 </div>
                 <div className="text-justify">
                   <div className="w-16 h-16 bg-[#7391c8]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Heart className="w-8 h-8 text-[#7391c8]" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Cat Lover</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 text-center">Cat Lover</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    Proud cat parent who finds inspiration in the curiosity and independence of feline friends.
+                    I love nature and animals, especially cats. You will never get over that feeling of pride when your cat come when you call them.
                   </p>
                 </div>
                 <div className="text-justify">
                   <div className="w-16 h-16 bg-[#7391c8]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-8 h-8 text-[#7391c8]" />
+                    <CookieIcon className="w-8 h-8 text-[#7391c8]" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Mentor</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 text-center">Gym Enthusiast</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    Passionate about sharing knowledge and helping aspiring developers start their coding journey.
+                    I love working out and walking. Staying active helps me maintain a healthy mind and body, which in turn boosts my creativity and productivity.
                   </p>
                 </div>
               </div>

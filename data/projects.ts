@@ -208,7 +208,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "MDX", "TypeScript", "Tailwind CSS"],
     category: "Blog Platform",
     liveUrl: "https://bytesizeblogs.netlify.app/",
-    githubUrl: "https://github.com/thawzinag/mdx-blog",
+    githubUrl: "https://github.com/ThawZinA/byte-size-blog",
     featured: true,
     completedAt: "2024-07-10",
     client: "Personal Project",

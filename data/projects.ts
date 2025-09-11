@@ -100,7 +100,7 @@ export const projects: Project[] = [
     tags: ["React", "TypeScript", "CSS Grid", "Tailwind CSS", "Framer Motion"],
     category: "Developer Tool",
     liveUrl: "https://gridable.netlify.app/",
-    githubUrl: "https://github.com/thawzinag/gridable",
+    githubUrl: "https://github.com/ThawZinA/gridable-layout-builder",
     featured: true,
     completedAt: "2024-11-20",
     client: "Open Source Project",

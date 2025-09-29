@@ -23,57 +23,46 @@ export interface Project {
     database: string[]
     tools: string[]
   }
-  testimonial?: {
-    content: string
-    author: string
-    position: string
-    company: string
-  }
   lessonsLearned?: string
 }
 
 export const projects: Project[] = [
   {
-    id: "form-builder",
-    title: "BuildAForm",
-    description: "Drag-and-drop form builder with real-time preview",
+    id: "ai-ethics-report",
+    title: "ai-ethics-report",
+    description: "AI ethics scorecard and a carbon impact tool",
     longDescription:
-      "A comprehensive form builder application that allows users to create complex forms through an intuitive drag-and-drop interface. Features real-time preview, advanced validation, and multiple export options including HTML, React components, and JSON schemas.",
-    image: "/images/form-builder-preview.png",
-    tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "AI Ethics Report is a web tool that helps users explore and understand the ethical considerations of artificial intelligence. It presents complex topics like fairness, accountability, transparency, and bias in an approachable format, turning academic frameworks into something more digestible for students, researchers, and professionals. The goal was to make AI ethics easier to check and reflect on, especially for people building or using AI systems.This is my dream project because it combines my academic research, technical skills, and personal values in one place. I’ve always wanted to build something that doesn’t just showcase code, but also creates awareness and impact. For me, AI Ethics Report is more than a portfolio piece — it’s a statement about how I see the future of technology: innovative, sustainable, and responsible.The AI Ethics Report connects closely with my MSc in Business Information Systems Management (BISM), as it brings together lessons from all four core modules.",
+    image: "/images/ai-ethics-report-preview.png",
+    tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     category: "Web Application",
-    liveUrl: "https://buildaform.netlify.app/",
-    githubUrl: "https://github.com/thawzinag/form-builder",
-    featured: false,
-    completedAt: "2024-12-15",
-    client: "Personal Project",
-    duration: "3 months",
+    liveUrl: "https://ai-ethics-report.netlify.app/",
+    githubUrl: "https://github.com/ThawZinA/ai-ethics-report",
+    featured: true,
+    completedAt: "2024-11-15",
+    client: "BISM MSc Final Project",
+    duration: "6 months",
     role: "Full Stack Developer & UI/UX Designer",
     features: [
-      "Drag-and-drop form builder interface",
-      "Real-time form preview and validation",
-      "Multiple input types (text, email, select, checkbox, radio, etc.)",
-      "Custom validation rules and error messages",
-      "Form styling and theming options",
-      "Export to HTML, React, and JSON formats",
-      "Template library with pre-built form layouts",
-      "Form analytics and submission tracking",
-      "Responsive design for all devices",
-      "Dark mode support",
+      "Clear categories for AI ethics principles (fairness, accountability, transparency, etc.)",
+      "Interactive, mobile-friendly UI with dark mode",
+      "Check AI systems against UNESCO, EU AI criteria",
+      "Carbon impact calculator for AI models",
+      "Dashards to track scores over time",
+      "Export the report as PDF",
+      "User authentication and profiles",
     ],
     challenges: [
-      "Implementing complex drag-and-drop functionality with proper state management",
+      "Implementing complex ethical standards as score systems",
       "Creating a flexible validation system that works with dynamic form structures",
-      "Ensuring real-time synchronization between builder and preview modes",
-      "Optimizing performance for large forms with many components",
-      "Building a robust export system that generates clean, production-ready code",
+      "Keeping the site engaging while text-heavy",
+      "Building report download as PDF",
     ],
     solutions: [
-      "Used React DnD library with custom hooks for smooth drag-and-drop experience",
+      "Used React pdf library for generating downloadable reports",
       "Implemented a schema-based validation system using Zod for type safety",
       "Created a centralized state management system using Zustand for real-time updates",
       "Applied virtualization techniques for handling large forms efficiently",
-      "Built a template engine that generates optimized code with proper formatting",
     ],
     technologies: {
       frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "React Hook Form", "Zod"],
@@ -82,13 +71,7 @@ export const projects: Project[] = [
       tools: ["Vercel", "ESLint", "Prettier", "Figma"],
     },
     technicalDetails: " React & Typescript ensures interactive UI with safety for grid configurations.CSS grid is the core concept and foundation of the layout. Tailwind CSS is used for styling. Framer Motion adds smooth animations and transitions. The combination of these technologies results in a modern, responsive, and visually appealing web application.",
-    testimonial: {
-      content:
-        "This form builder has revolutionized how we create forms for our clients. The intuitive interface and powerful features make it incredibly easy to build complex forms in minutes.",
-      author: "Sarah Johnson",
-      position: "Product Manager",
-      company: "TechCorp Solutions",
-    },
+    
   },
   {
     id: "gridable",
@@ -133,49 +116,39 @@ export const projects: Project[] = [
       database: ["Local Storage"],
       tools: ["Netlify", "ESLint", "Prettier", "Figma"],
     },
-    testimonial: {
-      content:
-        "Gridable made learning CSS Grid so much easier! The visual interface helped me understand complex grid concepts that I struggled with for months.",
-      author: "Mike Chen",
-      position: "Frontend Developer",
-      company: "StartupXYZ",
-    },
     lessonsLearned: "Building Gridable showed me how much clarity matters when teaching technical concepts. Beginners need strong visuals and small hints that guide them through without feeling lost. I learned that even advanced tools should feel approachable, like a friendly teacher rather than a complicated manual."
   },
   {
-    id: "collaborative-whiteboard",
-    title: "KollaBoard",
-    description: "Drag-and-drop form builder with real-time preview",
+    id: "brew-buddy",
+    title: "Brew Buddy",
+    description: "A whimsical coffee recipe app",
     longDescription:
-      "A comprehensive form builder application that allows users to create complex forms through an intuitive drag-and-drop interface. Features real-time preview, advanced validation, and multiple export options including HTML, React components, and JSON schemas.",
-    image: "/images/form-builder-preview.png",
+      "This project taught me how small design choices — like animations, spacing, and micro-interactions — can make a big difference in how “friendly” an app feels. I also learned the importance of structuring state for scalability, so new menu items or features don’t break existing flows. Most importantly, it showed me how to balance practical UX with whimsical design to make a simple app more memorable.",
+    image: "/images/brewbuddy_preview.png",
     tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     category: "Web Application",
-    liveUrl: "https://kollabboard.netlify.app/",
-    githubUrl: "https://github.com/thawzinag/form-builder",
-    featured: false,
-    completedAt: "2024-12-15",
+    liveUrl: "https://brewwbuddy.netlify.app/",
+    githubUrl: "https://github.com/ThawZinA/brew-buddy",
+    featured: true,
+    completedAt: "2025-09-15",
     client: "Personal Project",
-    duration: "3 months",
+    duration: "1 months",
     role: "Full Stack Developer & UI/UX Designer",
     features: [
-      "Drag-and-drop form builder interface",
-      "Real-time form preview and validation",
-      "Multiple input types (text, email, select, checkbox, radio, etc.)",
+      "A fun, interactive UI with animations and micro-interactions",
+      "Brewing timers and step-by-step instructions",
+      "Brewing recipe library with local storage",
       "Custom validation rules and error messages",
       "Form styling and theming options",
       "Export to HTML, React, and JSON formats",
       "Template library with pre-built form layouts",
       "Form analytics and submission tracking",
       "Responsive design for all devices",
-      "Dark mode support",
     ],
     challenges: [
-      "Implementing complex drag-and-drop functionality with proper state management",
-      "Creating a flexible validation system that works with dynamic form structures",
-      "Ensuring real-time synchronization between builder and preview modes",
-      "Optimizing performance for large forms with many components",
-      "Building a robust export system that generates clean, production-ready code",
+      "Persisting user experience",
+      "Making the UI engaging without overwhelming",
+      "Implementing animation",
     ],
     solutions: [
       "Used React DnD library with custom hooks for smooth drag-and-drop experience",
@@ -189,13 +162,6 @@ export const projects: Project[] = [
       backend: ["Next.js API Routes", "Node.js"],
       database: ["Local Storage", "IndexedDB"],
       tools: ["Vercel", "ESLint", "Prettier", "Figma"],
-    },
-    testimonial: {
-      content:
-        "This form builder has revolutionized how we create forms for our clients. The intuitive interface and powerful features make it incredibly easy to build complex forms in minutes.",
-      author: "Sarah Johnson",
-      position: "Product Manager",
-      company: "TechCorp Solutions",
     },
   },
   {

@@ -300,8 +300,15 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </div>
 
             {/* Project Meta */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
-              
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-sm">
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Role</h3>
+                <p className="text-gray-600 dark:text-gray-400">{project.role}</p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Duration</h3>
+                <p className="text-gray-600 dark:text-gray-400">{project.duration}</p>
+              </div>
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Category</h3>
                 <p className="text-gray-600 dark:text-gray-400">{project.category}</p>
@@ -396,13 +403,132 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </motion.section>
           )}
 
+          {/* UX Research Process */}
+          {project.uxProcess && project.uxProcess.research && project.uxProcess.research.length > 0 && (
+            <motion.section
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">UX Research</h2>
+              <div className="space-y-4">
+                {project.uxProcess.research.map((research, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#7391c8] rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-gray-600 text-sm dark:text-gray-400 leading-relaxed">{research}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+
+          {/* User Personas */}
+          {project.uxProcess && project.uxProcess.userPersonas && project.uxProcess.userPersonas.length > 0 && (
+            <motion.section
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">User Personas</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {project.uxProcess.userPersonas.map((persona, index) => (
+                  <div key={index} className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-6 border border-purple-200 dark:border-purple-800">
+                    <h3 className="text-lg font-semibold text-purple-800 dark:text-purple-300 mb-2">
+                      Persona {index + 1}
+                    </h3>
+                    <p className="text-gray-600 text-sm dark:text-gray-400 leading-relaxed">{persona}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+
+          {/* Problem Statement */}
+          {project.uxProcess && project.uxProcess.problemStatement && (
+            <motion.section
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Problem Statement</h2>
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border-l-4 border-[#7391c8]">
+                <p className="text-gray-600 text-sm dark:text-gray-400 leading-relaxed italic">
+                  "{project.uxProcess.problemStatement}"
+                </p>
+              </div>
+            </motion.section>
+          )}
+
+          {/* Design Goals */}
+          {project.uxProcess && project.uxProcess.designGoals && project.uxProcess.designGoals.length > 0 && (
+            <motion.section
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Design Goals</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {project.uxProcess.designGoals.map((goal, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#7391c8] rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-gray-600 text-sm dark:text-gray-400 leading-relaxed">{goal}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+
+          {/* Wireframes */}
+          {project.uxProcess && project.uxProcess.wireframes && project.uxProcess.wireframes.length > 0 && (
+            <motion.section
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Wireframes & Ideation</h2>
+              <div className="space-y-4">
+                {project.uxProcess.wireframes.map((wireframe, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#7391c8] rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-gray-600 text-sm dark:text-gray-400 leading-relaxed">{wireframe}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+
+          {/* Prototyping */}
+          {project.uxProcess && project.uxProcess.prototyping && project.uxProcess.prototyping.length > 0 && (
+            <motion.section
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Prototyping</h2>
+              <div className="space-y-4">
+                {project.uxProcess.prototyping.map((prototype, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#7391c8] rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-gray-600 text-sm dark:text-gray-400 leading-relaxed">{prototype}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+
           {/* Key Features */}
           {project.features && project.features.length > 0 && (
             <motion.section
               className="mb-20"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
             >
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Key Features</h2>
               <div className="grid md:grid-cols-2 gap-6">
@@ -416,19 +542,139 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </motion.section>
           )}
 
-          {/* Problems and Thought Process */}
+          {/* User Testing */}
+          {project.uxProcess && project.uxProcess.userTesting && project.uxProcess.userTesting.length > 0 && (
+            <motion.section
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">User Testing</h2>
+              <div className="space-y-4">
+                {project.uxProcess.userTesting.map((test, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#7391c8] rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-gray-600 text-sm dark:text-gray-400 leading-relaxed">{test}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+
+          {/* Design Iterations */}
+          {project.uxProcess && project.uxProcess.iterations && project.uxProcess.iterations.length > 0 && (
+            <motion.section
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.1 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Design Iterations</h2>
+              <div className="space-y-4">
+                {project.uxProcess.iterations.map((iteration, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#7391c8] rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-gray-600 text-sm dark:text-gray-400 leading-relaxed">{iteration}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+
+          {/* Design Decisions */}
+          {project.designDecisions && project.designDecisions.length > 0 && (
+            <motion.section
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Design Decisions</h2>
+              <div className="space-y-4">
+                {project.designDecisions.map((decision, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#7391c8] rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-gray-600 text-sm dark:text-gray-400 leading-relaxed">{decision}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+
+          {/* User Feedback */}
+          {project.userFeedback && project.userFeedback.length > 0 && (
+            <motion.section
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.3 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">User Feedback</h2>
+              <div className="space-y-4">
+                {project.userFeedback.map((feedback, index) => (
+                  <div key={index} className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 border-l-4 border-blue-500">
+                    <p className="text-gray-600 text-sm dark:text-gray-400 leading-relaxed italic">
+                      "{feedback}"
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+
+          {/* Accessibility */}
+          {project.accessibility && project.accessibility.length > 0 && (
+            <motion.section
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.4 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Accessibility Considerations</h2>
+              <div className="space-y-4">
+                {project.accessibility.map((access, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-gray-600 text-sm dark:text-gray-400 leading-relaxed">{access}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+
+          {/* Problems and Challenges */}
           {project.challenges && project.challenges.length > 0 && (
             <motion.section
               className="mb-20"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.6, delay: 1.5 }}
             >
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Problems and Thought Process</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Challenges Faced</h2>
               <div className="space-y-4">
                 {project.challenges.map((challenge, index) => (
                   <div key={index} className="prose prose-lg max-w-none text-gray-600 dark:text-gray-400">
                     <p className="text-sm text-justify leading-relaxed">{challenge}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+
+          {/* Solutions */}
+          {project.solutions && project.solutions.length > 0 && (
+            <motion.section
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.6 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Solutions</h2>
+              <div className="space-y-4">
+                {project.solutions.map((solution, index) => (
+                  <div key={index} className="prose prose-lg max-w-none text-gray-600 dark:text-gray-400">
+                    <p className="text-sm text-justify leading-relaxed">{solution}</p>
                   </div>
                 ))}
               </div>
@@ -459,14 +705,27 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             className="mb-20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 1.7 }}
           >
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Lessons Learned</h2>
-            <div className="prose prose-lg max-w-none text-gray-600 dark:text-gray-400">
-              <p className="text-sm text-justify leading-relaxed">
-                {project.lessonsLearned}
-              </p>
-            </div>
+            {project.lessonsLearned && (
+              <div className="prose prose-lg max-w-none text-gray-600 dark:text-gray-400 mb-6">
+                <p className="text-sm text-justify leading-relaxed">
+                  {project.lessonsLearned}
+                </p>
+              </div>
+            )}
+            {project.designLessons && project.designLessons.length > 0 && (
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Design Insights</h3>
+                {project.designLessons.map((lesson, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-gray-600 text-sm dark:text-gray-400 leading-relaxed">{lesson}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </motion.section>
 
           {/* Other Projects */}

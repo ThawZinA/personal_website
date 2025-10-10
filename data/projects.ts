@@ -32,7 +32,7 @@ export const projects: Project[] = [
     title: "ai-ethics-report",
     description: "AI ethics scorecard and a carbon impact tool",
     longDescription:
-      "AI Ethics Report is a web tool that helps users explore and understand the ethical considerations of artificial intelligence. It presents complex topics like fairness, accountability, transparency, and bias in an approachable format, turning academic frameworks into something more digestible for students, researchers, and professionals. The goal was to make AI ethics easier to check and reflect on, especially for people building or using AI systems.This is my dream project because it combines my academic research, technical skills, and personal values in one place. I’ve always wanted to build something that doesn’t just showcase code, but also creates awareness and impact. For me, AI Ethics Report is more than a portfolio piece — it’s a statement about how I see the future of technology: innovative, sustainable, and responsible.The AI Ethics Report connects closely with my MSc in Business Information Systems Management (BISM), as it brings together lessons from all four core modules.",
+      "AI Ethics Report is a web tool that helps users explore and understand the ethical considerations of artificial intelligence. The goal was to make AI styems' ethics and impact easier to check and reflect on, especially for people building or using AI systems.This is my MSc project and thus it combines core lessons of the MSc courses, my experience and skills, and personal values in one place. I’ve always wanted to build something that doesn’t just showcase code, but also creates awareness and impact. For me, it is more than a portfolio piece — it’s a statement about how I see the future of technology: innovative, sustainable, and responsible. ",
     image: "/images/ai-ethics-report-preview.png",
     tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     category: "Web Application",
@@ -70,8 +70,8 @@ export const projects: Project[] = [
       database: ["Local Storage", "IndexedDB"],
       tools: ["Vercel", "ESLint", "Prettier", "Figma"],
     },
-    technicalDetails: " React & Typescript ensures interactive UI with safety for grid configurations.CSS grid is the core concept and foundation of the layout. Tailwind CSS is used for styling. Framer Motion adds smooth animations and transitions. The combination of these technologies results in a modern, responsive, and visually appealing web application.",
-    
+    technicalDetails: "Next and Shadcn ui for consistent and easy UI implementation. Tailwind CSS is used for styling. Supabase for quick and easy database implementaion. The combination of these technologies results in a modern, responsive, and pretty intuitive web application.",
+    lessonsLearned: "Phewww....It was a pretty big project considering all the research, survey, analysis and report writing leading to the web application as the final produt. But I learned a lot during the process. The AI Ethics Report connects closely with my MSc in Business Information Systems Management (BISM), as it brings together lessons from all four core modules. It taught me how to translate complex ethical frameworks into practical tools, balancing technical implementation with user experience. I learned the importance of clear communication, especially when dealing with abstract concepts like ethics. This project reinforced my belief that technology should serve society responsibly, and it showed me how developers can contribute to that vision through thoughtful design and implementation."
   },
   {
     id: "gridable",
